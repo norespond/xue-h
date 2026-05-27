@@ -1,12 +1,43 @@
 {
   "id": "000",
-  "title": "未归档资源池",
+  "title": "未分类资源与私货",
   "folder": "000",
-  "summary": "用于暂存、试听或预览暂未确定出处的旧资源。",
+  "summary": "放置暂未分类的资源，以及不适合归入单个作品档案的个人收藏内容。",
   "description": "",
   "cover": "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg",
   "hero": "",
-  "cg": [],
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/cg/旭光.70az5zfrcy.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/cg/evyom16_01a.86uael4nvx.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/cg/d_luc_06_a.9rk1e21vc1.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/cg/d_luc_04_f.8hh47qjw0k.jpg"
+    },
+    {
+      "id": "cg-005",
+      "title": "CG 005",
+      "image": "https://norespond.github.io/picx-images-hosting/cg/b_rin_06_d.7axsz4uzev.jpg"
+    },
+    {
+      "id": "cg-006",
+      "title": "CG 006",
+      "image": "https://norespond.github.io/picx-images-hosting/cg/b_rin_06_a.39ltkqqw1i.jpg"
+    }
+  ],
   "bgm": [
     {
       "id": "bgm-001",

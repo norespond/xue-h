@@ -386,7 +386,7 @@ function renderResourceSummary(hasSummary, cgs, tracks, isUnclassified) {
 }
 
 function renderGame(game) {
-  document.title = `${game.title} - 雪花档案馆`;
+  document.title = `${game.title} - 雪蕐档案馆`;
   const cover = normalizePath(game.cover);
   const hasSummary = Boolean(game.description || game.summary);
   const summary = game.description || game.summary || "简介待补充。";

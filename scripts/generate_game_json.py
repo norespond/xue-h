@@ -259,9 +259,10 @@ def build_unclassified_game(game_dir: Path, fallback_bgm_cover: str) -> tuple[di
     meta = read_optional_json(game_dir / "未分类.json")
     cover = find_optional_asset(game_dir, ("cover.webp", "cover.jpg", "cover.png", "cover.jpeg")) or first_image(game_dir)
     cover_source = path_for_json(cover) if cover else read_cover_source(game_dir / "cover.json") or fallback_bgm_cover
+    cgs = build_cgs(game_dir)
     bgms, bgm_cover, uses_fallback_bgm_cover = build_unclassified_bgms(game_dir, cover_source)
-    title = str(meta.get("name") or "未归档资源池")
-    summary = str(meta.get("description") or "暂存暂未确定出处的旧资源。")
+    title = str(meta.get("name") or "未分类资源与私货")
+    summary = str(meta.get("description") or "放置暂未分类的资源，以及不适合归入单个作品档案的个人收藏内容。")
 
     game: dict[str, object] = {
         "id": str(meta.get("id") or "000"),
@@ -271,7 +272,7 @@ def build_unclassified_game(game_dir: Path, fallback_bgm_cover: str) -> tuple[di
         "description": "",
         "cover": cover_source or bgm_cover or "",
         "hero": "",
-        "cg": [],
+        "cg": cgs,
         "bgm": bgms,
         "isUnclassified": True,
     }
@@ -281,7 +282,7 @@ def build_unclassified_game(game_dir: Path, fallback_bgm_cover: str) -> tuple[di
         "folder": game["folder"],
         "hasCover": bool(game["cover"]),
         "hasSummary": bool(game["summary"]),
-        "cgCount": 0,
+        "cgCount": len(cgs),
         "bgmCount": len(bgms),
         "usesFallbackBgmCover": uses_fallback_bgm_cover,
         "ignoreMissingCg": True,

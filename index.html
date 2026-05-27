@@ -4,18 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>雪花档案馆</title>
+  <title>雪蕐档案馆</title>
   <link rel="icon" href="assets/icon/favicon.ico" />
   <link rel="preconnect" href="https://norespond.github.io" crossorigin />
+  <link rel="stylesheet" href="assets/css/game.css" />
   <link rel="stylesheet" href="assets/css/home.css" />
 </head>
 
 <body>
   <div class="page-shell">
     <header class="site-header" aria-label="站点导航">
-      <a class="brand" href="./index.html" aria-label="雪花档案馆首页">
+      <button class="back-button app-back" type="button" id="app-back" aria-label="返回作品列表" hidden>返回</button>
+      <a class="brand" href="./index.html" aria-label="雪蕐档案馆首页">
         <span class="brand-mark"></span>
-        <span>雪花档案馆</span>
+        <span>雪蕐档案馆</span>
       </a>
       <div class="header-actions">
         <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题">
@@ -30,52 +32,42 @@
       </div>
     </header>
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Galgame CG / BGM Archive</p>
-          <h1 id="hero-title">把喜欢的作品，整理成安静的视听档案。</h1>
-          <p class="hero-text">
-            以游戏为单位收纳介绍、CG 与 BGM。这里先从测试资源开始，慢慢打磨成一个适合回看和试听的收bgm藏馆。
-          </p>
-          <div class="hero-stats" aria-label="当前档案状态">
-            <span><strong id="game-count">0</strong> game</span>
-            <span><strong id="cg-count">0</strong> cg</span>
-            <span><strong id="bgm-count">0</strong> bgm</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="library" aria-labelledby="library-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Library</p>
-            <h2 id="library-title">作品列表</h2>
-          </div>
-        </div>
-        <p class="result-count" id="result-count"></p>
-        <div class="game-grid" id="game-grid" aria-live="polite"></div>
-      </section>
-
-      <section class="info-band" id="updates" aria-labelledby="updates-title">
-        <div>
-          <p class="eyebrow">Archive</p>
-          <h2 id="updates-title">整理完成</h2>
-        </div>
-        <p>
-          现有作品的简介、封面、精选 CG 与精选 BGM 已整理完成。后续只需维护 JSON 数据、补充未归档资源，并在更新后重新生成与校验数据。
-        </p>
-      </section>
-    </main>
+    <main id="app-root" aria-live="polite"></main>
 
     <footer class="site-footer" id="about">
       <p>资源均来源于网络，仅作为个人整理与本地测试用途。</p>
     </footer>
   </div>
 
+  <div class="player-bar" id="player-bar" hidden>
+    <img class="player-cover" id="player-cover" alt="" />
+    <div class="player-main">
+      <div class="player-title" id="player-title">未选择曲目</div>
+      <div class="player-time" id="player-time">00:00 / 00:00</div>
+      <input class="player-progress" id="player-progress" type="range" min="0" max="100" value="0" />
+    </div>
+    <div class="player-controls" aria-label="播放器控制">
+      <button class="player-button" type="button" id="player-prev" aria-label="上一首">上一首</button>
+      <button class="player-button" type="button" id="player-toggle" aria-label="播放或暂停">播放</button>
+      <button class="player-button" type="button" id="player-next" aria-label="下一首">下一首</button>
+      <button class="player-button player-close" type="button" id="player-close" aria-label="关闭播放器">关闭</button>
+    </div>
+    <audio id="audio-player"></audio>
+  </div>
+
+  <div class="cg-viewer" id="cg-viewer" hidden aria-modal="true" role="dialog" aria-label="CG 预览">
+    <button class="viewer-close" type="button" id="viewer-close" aria-label="关闭预览">关闭</button>
+    <button class="viewer-nav viewer-prev" type="button" id="viewer-prev" aria-label="上一张">上一张</button>
+    <figure class="viewer-figure">
+      <img class="viewer-image" id="viewer-image" alt="" />
+      <figcaption class="viewer-caption" id="viewer-caption"></figcaption>
+    </figure>
+    <button class="viewer-nav viewer-next" type="button" id="viewer-next" aria-label="下一张">下一张</button>
+  </div>
+
   <a class="back-to-top" href="#" aria-label="回到顶部">↑</a>
 
-  <script src="assets/js/home.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 </body>
 
 </html>

@@ -590,6 +590,10 @@ h2 {
   backdrop-filter: blur(18px);
 }
 
+.player-bar[hidden] {
+  display: none;
+}
+
 .player-bar:not([hidden]) {
   animation: player-in 180ms ease-out;
 }
