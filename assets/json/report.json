@@ -1,0 +1,27 @@
+{
+  "outputDir": "assets\\json",
+  "totals": {
+    "games": 22,
+    "withSummary": 22,
+    "withCover": 22,
+    "withBgm": 22,
+    "withCg": 21
+  },
+  "missingSummary": [],
+  "missingCover": [],
+  "missingBgm": [],
+  "missingCg": [],
+  "fallbackBgmCover": [
+    {
+      "id": "000",
+      "title": "未归档资源池",
+      "folder": "000",
+      "hasCover": true,
+      "hasSummary": true,
+      "cgCount": 0,
+      "bgmCount": 17,
+      "usesFallbackBgmCover": true,
+      "ignoreMissingCg": true
+    }
+  ]
+}

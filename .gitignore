@@ -1,0 +1,19 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Editor settings
+.vscode/
+
+# Local audio files are temporary after upload to R2/Worker.
+# Keep bgm.json files in git; do not commit the audio binaries.
+assets/game/**/bgm/*.mp3
+assets/game/**/bgm/*.ogg
+assets/game/**/bgm/*.wav
+assets/game/**/bgm/*.flac
+assets/game/**/bgm/*.m4a
+assets/game/**/bgm/*.aac
+
+# OS noise
+Thumbs.db
+.DS_Store

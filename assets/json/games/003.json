@@ -1,0 +1,69 @@
+{
+  "id": "003",
+  "title": "雪之华",
+  "folder": "003",
+  "summary": "――故事背景的季节是冬季。\n大学进入了寒假，骑乘机车进行无目的的旅行的『草津拓也（くさつたくや）』，才刚造访位于偏僻乡下的『汤华镇』时就发生了交通事故。\n连人带车整个撞进了路边的古庙，这时拓也失去了意识。\n再次醒过来之时，进入视线里的是，飘浮在空中，看着仰倒在地上的自己的，穿着奇妙服装的少女。\n「啊，醒来了呢。\n人没事就好。」 穿着奇妙服装的少女，对着慢慢起身的拓也微笑，报上了自己的名字－土地的守护神 『雪华』。\n面对被这突然的事情吓到呆住的拓也，雪华告诉了他是她使用了身为土地神的力量、治疗了身受濒死重伤的拓也。\n「不用不用，这没有什么好道谢的。\n虽然不能说是代替谢礼之类的，不过可以麻烦你负担坏掉小庙的修理费吗？」\n制止了还搞不清楚状况，正打算要道谢的拓也、雪华从不知哪儿掏出了计算机开始累加计算。\n「按下总计，这样大概是235万元左右吧。\n只要把这笔钱当成是生命的价值，完全是物超所值呢?」 脸上依然保持着笑容，雪华将形状像是赛钱箱的储金箱递到了拓也面前。\n――就这样半强制地、听取身为『救命恩人』的雪华的要求的拓也，落得必须到『汤华镇商店街』打工渡日。",
+  "description": "",
+  "cover": "/assets/game/003/2fa1b0b87ef7d6ea093016621bbeea85.jpg",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/ey0501.5c1lugca2s.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/eh0501.2a5pt8axv3.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/eh0202.36278okmab.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/ee0301.7px56ccs9.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "つないだ手ぶくろ",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%81%A4%E3%81%AA%E3%81%84%E3%81%A0%E6%89%8B%E3%81%B6%E3%81%8F%E3%82%8D.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ゆのおと.1vz03rfbmv.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "まどろみの昼下がり",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%81%BE%E3%81%A9%E3%82%8D%E3%81%BF%E3%81%AE%E6%98%BC%E4%B8%8B%E3%81%8C%E3%82%8A.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ゆのおと.1vz03rfbmv.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "ゆのはな",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%82%86%E3%81%AE%E3%81%AF%E3%81%AA.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ゆのおと.1vz03rfbmv.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "冬だより",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E5%86%AC%E3%81%A0%E3%82%88%E3%82%8A.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ゆのおと.1vz03rfbmv.jpg"
+    },
+    {
+      "id": "bgm-005",
+      "title": "約束 ～resume～",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E7%B4%84%E6%9D%9F%20%EF%BD%9Eresume%EF%BD%9E.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ゆのおと.1vz03rfbmv.jpg"
+    },
+    {
+      "id": "bgm-006",
+      "title": "雪のまほろば",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E9%9B%AA%E3%81%AE%E3%81%BE%E3%81%BB%E3%82%8D%E3%81%B0.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ゆのおと.1vz03rfbmv.jpg"
+    }
+  ]
+}

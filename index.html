@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>雪花档案馆</title>
+  <link rel="icon" href="assets/icon/favicon.ico" />
+  <link rel="preconnect" href="https://norespond.github.io" crossorigin />
+  <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="site-header" aria-label="站点导航">
+      <a class="brand" href="./index.html" aria-label="雪花档案馆首页">
+        <span class="brand-mark"></span>
+        <span>雪花档案馆</span>
+      </a>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="切换日夜主题">
+          夜间
+        </button>
+        <label class="search-box header-search" aria-label="搜索作品">
+          <span class="search-control">
+            <input id="game-search" type="search" placeholder="搜索作品" autocomplete="off" />
+            <button class="clear-search" type="button" id="clear-search" aria-label="清空搜索" hidden>清空</button>
+          </span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Galgame CG / BGM Archive</p>
+          <h1 id="hero-title">把喜欢的作品，整理成安静的视听档案。</h1>
+          <p class="hero-text">
+            以游戏为单位收纳介绍、CG 与 BGM。这里先从测试资源开始，慢慢打磨成一个适合回看和试听的收bgm藏馆。
+          </p>
+          <div class="hero-stats" aria-label="当前档案状态">
+            <span><strong id="game-count">0</strong> game</span>
+            <span><strong id="cg-count">0</strong> cg</span>
+            <span><strong id="bgm-count">0</strong> bgm</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" id="library" aria-labelledby="library-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Library</p>
+            <h2 id="library-title">作品列表</h2>
+          </div>
+        </div>
+        <p class="result-count" id="result-count"></p>
+        <div class="game-grid" id="game-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="info-band" id="updates" aria-labelledby="updates-title">
+        <div>
+          <p class="eyebrow">Archive</p>
+          <h2 id="updates-title">整理完成</h2>
+        </div>
+        <p>
+          现有作品的简介、封面、精选 CG 与精选 BGM 已整理完成。后续只需维护 JSON 数据、补充未归档资源，并在更新后重新生成与校验数据。
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="about">
+      <p>资源均来源于网络，仅作为个人整理与本地测试用途。</p>
+    </footer>
+  </div>
+
+  <a class="back-to-top" href="#" aria-label="回到顶部">↑</a>
+
+  <script src="assets/js/home.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{
+  "id": "007",
+  "title": "Purely ～その狭い青空を見上げて～",
+  "folder": "007",
+  "summary": "看着这小镇上空的那片蓝天，就会看到各样的梦，和各样的终结――。\n随着深秋的到来，天空也会变得更高，离我们更远，望着这样渐变的天空，更感觉到这小镇的天空渺小。\n这里有香飘四溢、不计其数的温泉。\n这里是山谷中衍生出的小镇 身为温泉旅馆继承的墨崎優哉，在“温泉部”即将被废部之际，被“元同学”拜托帮忙复兴。\n部长翠川悠，为了让温泉部继续存活下去而燃烧一身热情的热血少女。\n她那有点给人添麻烦的善意，有些热情过头了 其中的一名部员，葛城恋鳥。\n总是冷静寡言自说自话。\n不知为何，对優哉持有敌视态度。\n接着是優哉的青梅竹马，秋里愛歌。\n虽与優哉为同龄，但却老是扮演着自称姐姐的角色。\n被卷入了复兴运动中的她，自那以后过上了忙碌的每一天。\n一副没啥干劲样子的優哉开始了对温泉部的协助。\n一天，在老家的温泉旅馆，优哉与一位虚幻般的少女邂逅了。\n「シュクヤ……？」\n长着一头长长黑发的少女用没听过的名字呼唤他。\n看着那双清澈的眼睛，优哉内心深处的回忆被唤醒了。\n以这次邂逅为契机―― 曾一度忘记变红的枫叶，再次将自身渐渐染红。",
+  "description": "",
+  "cover": "/assets/game/007/normal_b6734ded4b25bd4b72fdce68e09800ba.jpg",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EV00920B.3rbuy1gyu7.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "Aozora",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/Aozora.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/Purely-～その狭い青空を見上げて～.4clgfu355h.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "Evergreen",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/Evergreen.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/Purely-～その狭い青空を見上げて～.4clgfu355h.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "happiness",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/happiness.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/Purely-～その狭い青空を見上げて～.4clgfu355h.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "same dream",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/same%20dream.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/Purely-～その狭い青空を見上げて～.4clgfu355h.jpg"
+    }
+  ]
+}

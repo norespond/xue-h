@@ -1,0 +1,57 @@
+{
+  "id": "019",
+  "title": "恋色マリアージュ",
+  "folder": "019",
+  "summary": "「对我有什么不满吗，主人？」\n面前的她，说话时神色不变。\n突然扑面而来的提亲。\n无论怎么看，对方都是货真价实的大小姐。\n头发柔软顺滑，应该突出的地方非常突出的杀人身材。\n更重要的是，她超级可爱。\n给予老家的旅馆融资的同时，还能娶她作为新娘子……\n简直就像是谎言一样的事实。\n但是，现在就立刻结婚可是相当麻烦啊。\n虽然她富有魅力，但大家还只是学生啊。\n不管怎么说，最起码我也想先好好谈一次恋爱。\n「主人，要洗澡吗？\n要用餐吗？\n还是说，要解除婚约？」\n没落了的名门『琴城家』以及琴城旅館，以及对其进行融资的新兴的『森川家』。\n急躁的我，以及神经紧张的她。\n完全无法契合在一起的，两个人的婚礼。\n一开始，本以为是“与新娘子的心跳加速的新婚生活”，结果却成了“与新娘子的心脏麻痹的新婚生活”。\n同班同学以及旅馆的工作人员、客人。\n将周围人们的想法与困惑通通卷进里面，让不懂得结婚的真正含义的我们的故事，正在欢快地展开——",
+  "description": "",
+  "cover": "/assets/game/019/normal_e871b5a8f9beedc28a0dcb139cbd1022.jpg",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev019004.7w7gfv7p4h.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev019003.8z75qr3iy6.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev019002.54ye7slkyu.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev019001.6t7r4zbv3e.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "スマイルハッピー(秋吉ねここ イメージソング)",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%82%B9%E3%83%9E%E3%82%A4%E3%83%AB%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%28%E7%A7%8B%E5%90%89%E3%81%AD%E3%81%93%E3%81%93%20%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%B3%E3%82%B0%29.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/恋色マリアージュ-キャラクターソング＆サウンドアルバム.54y40f2tay.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "思い出のカケラ(森川美穂乃 イメージソング)",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%80%9D%E3%81%84%E5%87%BA%E3%81%AE%E3%82%AB%E3%82%B1%E3%83%A9%28%E6%A3%AE%E5%B7%9D%E7%BE%8E%E7%A9%82%E4%B9%83%20%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%82%BD%E3%83%B3%E3%82%B0%29.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/恋色マリアージュ-キャラクターソング＆サウンドアルバム.54y40f2tay.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "恋のメロディ",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%81%8B%E3%81%AE%E3%83%A1%E3%83%AD%E3%83%87%E3%82%A3.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/恋色マリアージュ-キャラクターソング＆サウンドアルバム.54y40f2tay.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "琴城の流儀",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E7%90%B4%E5%9F%8E%E3%81%AE%E6%B5%81%E5%84%80.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/恋色マリアージュ-キャラクターソング＆サウンドアルバム.54y40f2tay.jpg"
+    }
+  ]
+}

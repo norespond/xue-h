@@ -1,0 +1,115 @@
+{
+  "id": "000",
+  "title": "未归档资源池",
+  "folder": "000",
+  "summary": "用于暂存、试听或预览暂未确定出处的旧资源。",
+  "description": "",
+  "cover": "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg",
+  "hero": "",
+  "cg": [],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "木漏れ日のバラード",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/anporin%20-%20%E6%9C%A8%E6%BC%8F%E3%82%8C%E6%97%A5%E3%81%AE%E3%83%90%E3%83%A9%E3%83%BC%E3%83%89.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/『私が好きなら「好き」って言って!』.4uba79nkzm.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "私が好きなら「好き」って言って",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/anporin%20-%20%E7%A7%81%E3%81%8C%E5%A5%BD%E3%81%8D%E3%81%AA%E3%82%89%E3%80%8C%E5%A5%BD%E3%81%8D%E3%80%8D%E3%81%A3%E3%81%A6%E8%A8%80%E3%81%A3%E3%81%A6.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/『私が好きなら「好き」って言って!』.4uba79nkzm.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "MargED",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/MargED.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/Marguerite-Sphere--マーガレット-スフィア-.4g4ugefa5s.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "MargOP",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/MargOP.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/Marguerite-Sphere--マーガレット-スフィア-.4g4ugefa5s.jpg"
+    },
+    {
+      "id": "bgm-005",
+      "title": "My First Love",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/My%20First%20Love.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/Duca-Works-15th-anniversary-BEST.13m4m0ypsc.jpg"
+    },
+    {
+      "id": "bgm-006",
+      "title": "Platonic Syndrome",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/Platonic%20Syndrome.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/misty-moon.4xuw4zgnqs.jpg"
+    },
+    {
+      "id": "bgm-007",
+      "title": "Re：Call",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/Re%EF%BC%9ACall.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg"
+    },
+    {
+      "id": "bgm-008",
+      "title": "seven colors",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/seven%20colors.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/GWAVE2007-2nd-Drivers.2ks9ns2ujv.jpg"
+    },
+    {
+      "id": "bgm-009",
+      "title": "XX：Calling",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/XX%EF%BC%9ACalling.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg"
+    },
+    {
+      "id": "bgm-010",
+      "title": "おいおい、マジですか",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%81%8A%E3%81%84%E3%81%8A%E3%81%84%E3%80%81%E3%83%9E%E3%82%B8%E3%81%A7%E3%81%99%E3%81%8B.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg"
+    },
+    {
+      "id": "bgm-011",
+      "title": "きっと彼女は。",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%81%8D%E3%81%A3%E3%81%A8%E5%BD%BC%E5%A5%B3%E3%81%AF%E3%80%82.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/やはり俺の青春ラブコメはまちがっている。-オリジナルサウンドトラック.4618uvyqq.jpg"
+    },
+    {
+      "id": "bgm-012",
+      "title": "君のいる場所へ",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E5%90%9B%E3%81%AE%E3%81%84%E3%82%8B%E5%A0%B4%E6%89%80%E3%81%B8.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/GWAVE-2010-1st-Grace.1e8yf6dxy3.jpg"
+    },
+    {
+      "id": "bgm-013",
+      "title": "幸せのオトシモノ",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E5%B9%B8%E3%81%9B%E3%81%AE%E3%82%AA%E3%83%88%E3%82%B7%E3%83%A2%E3%83%8E.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/CUFFS-SONGS-BEST2.5trdkfqc5j.jpg"
+    },
+    {
+      "id": "bgm-014",
+      "title": "悲しい曲",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%82%B2%E3%81%97%E3%81%84%E6%9B%B2.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg"
+    },
+    {
+      "id": "bgm-015",
+      "title": "星之遗物",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%98%9F%E4%B9%8B%E9%81%97%E7%89%A9.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/众星因你，皆降为尘。.77dwoh1ed9.jpg"
+    },
+    {
+      "id": "bgm-016",
+      "title": "未命名-inst",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%9C%AA%E5%91%BD%E5%90%8D-inst.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg"
+    },
+    {
+      "id": "bgm-017",
+      "title": "未命名",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%9C%AA%E5%91%BD%E5%90%8D.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg"
+    }
+  ],
+  "isUnclassified": true
+}

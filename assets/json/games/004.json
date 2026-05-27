@@ -1,0 +1,50 @@
+{
+  "id": "004",
+  "title": "樱吹雪-千年之恋",
+  "folder": "004",
+  "summary": "主人公・柊一成失去了唯一的亲人母亲，本应凭借着奖学金升入东京都内的学院。\n但却如此这般地被迫入学豪华绚烂・高贵无比的贵人们就读的超贵族学园 『花宫学院』。\n正式（？）\n入学花宫学院的一成。\n但话又说回来，出生贫穷的他怎么可能与其他在温室里成长的学生们合得来呢……\n在这样的情况下，某一天，一成偶尔搭救了一个被人追杀的小孩……\n哦不对是少女。\n那位少女正是花宫学院理事・桜森家的下期家主，学院祭『花仙祭』的实行委员长桜森紅紗（さくらもりあかしゃ）。\n更有甚者的是还因为这段英雄救美的因缘被强行立下了作为『花仙祭实行委员』、通称 『桜吹雪』的契约……\n就这样，以『花仙祭』为目标的一成的欢天喜地而又「人生不如意事十之八九ー」的学院生活开始了。",
+  "description": "",
+  "cover": "/assets/game/004/normal_da83201a01deb965f32dddcd6e046db0.jpg",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EV034aL.2yyzgaytda.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EV008L.6f1b8e8gf5.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EV005aL.2oc5n5jl77.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EV004aL.4joqfrw0sm.jpg"
+    },
+    {
+      "id": "cg-005",
+      "title": "CG 005",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EV003L.5xb9jt72t2.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "舞う花々の憩う時",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E8%88%9E%E3%81%86%E8%8A%B1%E3%80%85%E3%81%AE%E6%86%A9%E3%81%86%E6%99%82.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/「桜吹雪」&「花鳥風月」サウンドトラック『命短シ恋セヨ乙女』.86u01n45bv.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "桜霞～サクラノカスミ～",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E8%A5%BF%E6%B2%A2%E3%81%AF%E3%81%90%E3%81%BF%20-%20%E6%A1%9C%E9%9C%9E%EF%BD%9E%E3%82%B5%E3%82%AF%E3%83%A9%E3%83%8E%E3%82%AB%E3%82%B9%E3%83%9F%EF%BD%9E.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/「桜吹雪」&「花鳥風月」サウンドトラック『命短シ恋セヨ乙女』.86u01n45bv.jpg"
+    }
+  ]
+}

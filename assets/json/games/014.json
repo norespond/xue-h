@@ -1,0 +1,78 @@
+{
+  "id": "014",
+  "title": "ひだまりバスケット",
+  "folder": "014",
+  "summary": "从维也纳回来的妹妹，突然发出「恋人宣言」!?\n夏季因观光客而热闹，其它季节也有冲浪者到访的沿海城镇。\n就读于从中学到大学实行一条龙教育的巨大学校「私立津々野瀬学园」的仲神啓人，是个极为普通的男学生。\n与自小不管做什么都是第一，被称为神童的妹妹・かすが和女教师的妈妈三人（父亲已逝），血缘什么的没关系，过着幸福的生活。\n可是，那说到底也只有啓人自己觉得是这样……\n妹妹かすが内心所期待的是，也就是！\n和“最喜欢的哥哥”＝啓人的甜～蜜恋人生活!!\n被看中有小提琴的才能，从中学时候起去了维也纳留学的かすが，为了向哥哥表明心意强行中止留学归国了。\n困惑于可爱妹妹突然的恋人宣言，而又在还没给出答复的情况下偶然接吻了的啓人和かすが。\n更不巧的是在现场被母亲はるひ看见了，可怜的啓人被教训「去冷静一下头脑」，就被流放到了传闻是学校废物巢穴的学校宿舍……\n但是，只因这种程度的事就放弃的就不是かすが了!!\nかすが的爱是无止境的。\n不和啓人成就恋爱的话就不放弃猛烈的攻势。\n宿舍的辛苦日子——宿舍里有会狠狠瞪人的豪爽女老大，被不可思议的美少女组合盯上（好和坏的意思都有） 与中意的青梅竹马没有接点，母亲的误解也没有一点能澄清兆头。\n被周围的女性牵着鼻子走，多少有点觉得不合理同时又占到一定的便宜。\n更有气势爆满的妹妹发出喜欢喜欢光线全范围照射的校园生活在面前，啓人会有和平的生活吗!?",
+  "description": "",
+  "cover": "/assets/game/014/normal_8f38ffd30ac79ae7fffd33de3aefeaba.jpg",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev014007.7ehera5hfo.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev014006.8adw6qf5tq.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev014005.1sfodf46jd.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev014004.8adw6qf5r3.jpg"
+    },
+    {
+      "id": "cg-005",
+      "title": "CG 005",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev014003.6t7r4zb0zd.jpg"
+    },
+    {
+      "id": "cg-006",
+      "title": "CG 006",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev014002.2rvrql6xlm.jpg"
+    },
+    {
+      "id": "cg-007",
+      "title": "CG 007",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev014001.et59dt4dr.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "prism (instrumental)",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/prism%20%28instrumental%29.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ひだまりバスケット.2obvlhvxci.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "prism",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/prism.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ひだまりバスケット.2obvlhvxci.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "ひだまりバスケット (instrumental)",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%81%B2%E3%81%A0%E3%81%BE%E3%82%8A%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%20%28instrumental%29.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ひだまりバスケット.2obvlhvxci.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "ひだまりバスケット",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%81%B2%E3%81%A0%E3%81%BE%E3%82%8A%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ひだまりバスケット.2obvlhvxci.jpg"
+    },
+    {
+      "id": "bgm-005",
+      "title": "未来を描いて",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%9C%AA%E6%9D%A5%E3%82%92%E6%8F%8F%E3%81%84%E3%81%A6.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/ひだまりバスケット.2obvlhvxci.jpg"
+    }
+  ]
+}

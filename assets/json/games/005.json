@@ -1,0 +1,68 @@
+{
+  "id": "005",
+  "title": "春开、意遥遥。",
+  "folder": "005",
+  "summary": "因为某事。\n虽说是如此，但是到底是源于哪件事情，我也实在是说不清楚……\n总之最终结局是，我和四个女孩子一起，在人烟稀少的地方开始了漫长的春假生活。\n没有手机，虽然配置不错的笔记本电脑堆积如山，但是却没有网络环境。\n在这有的，只是犹如温泉旅店一般的大型宿舍，以及几乎要废弃掉的校舍。\n在休耕期的田地里，整整齐齐地排满了成熟的冬野菜。\n远远望去，可看到覆盖着皑皑白雪的青色山脉和绚丽清澈的海洋。\n……\n还有那，用途不明的烟囱直通云霄顶端。\n并非做梦，也不是什么科幻小说，更不是什么玄幻事件。\n虽然出现了各种各样的事件，不过我和四个女孩子还是平稳地过着每天的生活，直到出现了一个大问题。\n女孩子中的一员，总是喜欢胡闹的静夏，突然间冒出了一句。\n“把这弄成这个男人的后宫吧！\n”\n所谓后宫就是……\n难道是……\n莫非……\n。\n嗯嗯嗯！？\n还没弄明白后宫到底是神马意思，我就已经被静夏扒掉了衣服，开始了授业指导……",
+  "description": "",
+  "cover": "/assets/game/005/aboutdialog.png",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EVH0900.1apmj49h3f.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EVG0900.2rvrkvdlss.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EVG0707.lwcz3ly0i.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EVF0900.3k8n2lu7gm.jpg"
+    },
+    {
+      "id": "cg-005",
+      "title": "CG 005",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg/EVA10.1760lege8y.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "Never forget me",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/Never%20forget%20me.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/folder.3rbuy1c846.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "The title of before spring",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/The%20title%20of%20before%20spring.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/folder.3rbuy1c846.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "思念飞舞在春风里",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%80%9D%E5%BF%B5%E9%A3%9E%E8%88%9E%E5%9C%A8%E6%98%A5%E9%A3%8E%E9%87%8C.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/folder.3rbuy1c846.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "春の陽",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%98%A5%E3%81%AE%E9%99%BD.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/folder.3rbuy1c846.jpg"
+    },
+    {
+      "id": "bgm-005",
+      "title": "春天的阳光(Short Ver.)",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%98%A5%E5%A4%A9%E7%9A%84%E9%98%B3%E5%85%89%28Short%20Ver.%29.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/folder.3rbuy1c846.jpg"
+    }
+  ]
+}

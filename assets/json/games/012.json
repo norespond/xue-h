@@ -1,0 +1,69 @@
+{
+  "id": "012",
+  "title": "キスよりさきに恋よりはやく",
+  "folder": "012",
+  "summary": "碧蓝的大海和明亮的天空。\n古香古色的建筑和街道，流露着让人还念的气息。\n在这座城镇，我和女孩的生活开始了。\n她就是我的学生，我的表妹，我的未婚妻，也就是现在的……\n我的新娘。\n故事的舞台是“香泉市”。\n这是座古建筑林立，被称作第二小江户、小京都的美丽的城市。\n在植被繁茂的群山中，有着历史悠久的神社，坡下的白色仓库前面，就是那一望无际的碧海蓝天。\n主角年幼时，曾在这座城镇临近的“刻河村”生活。\n在城镇中，有像姐姐一样的美万里（みまり）和花蝶（かちょう）。\n而，村子中，则有着如妹妹般的乙姫（いつき）和瑠璃歌（るりか）。\n但不知为何，这段记忆丧失了。\n只是依稀地记得当时的悲欢离合。\n数年之后。\n主角前往东京攻读高中和大学，渐渐和这座城市疏远了。\n但是，大学毕业后，主角决定回到这座学园担任教师的工作。\n原本停止的故事的时针，再次开始转动……",
+  "description": "",
+  "cover": "/assets/game/012/normal_811f101b2fa7595f29545bb453867633.jpg",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev012004.3ns961fqc4.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev012003.2h8xxfqtp0.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev012002.mpiijxqq.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev012001.6wrd2p37su.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "フタリユラリ",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%83%95%E3%82%BF%E3%83%AA%E3%83%A6%E3%83%A9%E3%83%AA.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/キスよりさきに恋よりはやく-～ORIGINAL-SOUNDTRACK～.7snkarvujy.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "望むがままに",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%9C%9B%E3%82%80%E3%81%8C%E3%81%BE%E3%81%BE%E3%81%AB.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/キスよりさきに恋よりはやく-～ORIGINAL-SOUNDTRACK～.7snkarvujy.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "終夏～乙姫～",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E7%B5%82%E5%A4%8F%EF%BD%9E%E4%B9%99%E5%A7%AB%EF%BD%9E.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/キスよりさきに恋よりはやく-～ORIGINAL-SOUNDTRACK～.7snkarvujy.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "結ばれた想い",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E7%B5%90%E3%81%B0%E3%82%8C%E3%81%9F%E6%83%B3%E3%81%84.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/キスよりさきに恋よりはやく-～ORIGINAL-SOUNDTRACK～.7snkarvujy.jpg"
+    },
+    {
+      "id": "bgm-005",
+      "title": "郷里の思い出",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E9%83%B7%E9%87%8C%E3%81%AE%E6%80%9D%E3%81%84%E5%87%BA.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/キスよりさきに恋よりはやく-～ORIGINAL-SOUNDTRACK～.7snkarvujy.jpg"
+    },
+    {
+      "id": "bgm-006",
+      "title": "飛び立つもの",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E9%A3%9B%E3%81%B3%E7%AB%8B%E3%81%A4%E3%82%82%E3%81%AE.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/キスよりさきに恋よりはやく-～ORIGINAL-SOUNDTRACK～.7snkarvujy.jpg"
+    }
+  ]
+}

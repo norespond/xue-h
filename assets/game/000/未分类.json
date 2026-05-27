@@ -1,0 +1,79 @@
+{
+  "id": "000",
+  "name": "未归档资源池",
+  "description": "用于暂存、试听或预览暂未确定出处的旧资源。",
+  "items": [
+    {
+      "name": "MargED",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/MargED.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "MargOP",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/MargOP.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "My First Love",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/My First Love.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "Re：Call",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/Re：Call.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "seven colors",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/seven colors.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "XX：Calling",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/XX：Calling.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "おいおい、マジですか",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/おいおい、マジですか.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "君のいる場所へ",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/君のいる場所へ.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "幸せのオトシモノ",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/幸せのオトシモノ.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "悲しい曲",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/悲しい曲.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "未命名-inst",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/未命名-inst.mp3",
+      "note": "未确定"
+    },
+    {
+      "name": "未命名",
+      "type": "bgm",
+      "path": "assets/game/000/bgm/未命名.mp3",
+      "note": "未确定"
+    }
+  ]
+}

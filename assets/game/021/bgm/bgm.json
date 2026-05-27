@@ -1,0 +1,25 @@
+{
+  "cover": "https://norespond.github.io/picx-images-hosting/cover/星空音楽会－ORIGINAL-SOUNDTRACK－.3nryynyoky.jpg",
+  "tracks": [
+    {
+      "name": "Gerbera～希望の花～",
+      "src": "https://icy-wave-c6a1.qiea71142.workers.dev/Gerbera%EF%BD%9E%E5%B8%8C%E6%9C%9B%E3%81%AE%E8%8A%B1%EF%BD%9E.mp3"
+    },
+    {
+      "name": "ToyMemory",
+      "src": "https://icy-wave-c6a1.qiea71142.workers.dev/ToyMemory.mp3"
+    },
+    {
+      "name": "ここにいるよ",
+      "src": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%81%93%E3%81%93%E3%81%AB%E3%81%84%E3%82%8B%E3%82%88.mp3"
+    },
+    {
+      "name": "満ちては咲く花のように",
+      "src": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%BA%80%E3%81%A1%E3%81%A6%E3%81%AF%E5%92%B2%E3%81%8F%E8%8A%B1%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB.mp3"
+    },
+    {
+      "name": "終わりなき空の果て",
+      "src": "https://icy-wave-c6a1.qiea71142.workers.dev/%E7%B5%82%E3%82%8F%E3%82%8A%E3%81%AA%E3%81%8D%E7%A9%BA%E3%81%AE%E6%9E%9C%E3%81%A6.mp3"
+    }
+  ]
+}

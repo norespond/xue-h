@@ -1,0 +1,98 @@
+{
+  "id": "011",
+  "title": "アンラッキーリバース Unlucky Re：Birth/Reverse",
+  "folder": "011",
+  "summary": "春天。\n邂逅的季节。\n在这晴朗得让全世界都能欢快起来的天气里，我却因为找不到工作而绝望无比。\n不过人生长路漫漫，不走运的日子肯定是有的。\n这也不过是那“不走运”的日子的其中之一而已——直到那一刻，我都还是这么想的。\n「接下来，你就要被送去异世界了哦」我被突然冒出来如此宣言的自称女神缠上，被强行带到了一个自己完全不认识的地方。\n「从哪里进来的啊！\n你这个变态！」又被出现在面前的女孩子贴上了这样的标签。\n我为这最糟的第一印象而消沉着，但——或许是因为不走运的反作用，在这个世界里反而充满了充斥着露出的幸运事件！\n？\n以异世界オルターニア为舞台展开的比砂糖还要甜蜜的学园生活。\n被可爱的女孩子们包围的我的未来，究竟将向往何方。\n崭新的邂逅、超越世界的恋爱，从此开始！",
+  "description": "",
+  "cover": "/assets/game/011/Box_Front.png",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev110011.2yyzm0r2tp.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11010.1e98mjtvcv.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11009.1hsuk9my28.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11008.4ubken3ie7.jpg"
+    },
+    {
+      "id": "cg-005",
+      "title": "CG 005",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11007.szl08zf0u.jpg"
+    },
+    {
+      "id": "cg-006",
+      "title": "CG 006",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11006.4joqlhoa7t.jpg"
+    },
+    {
+      "id": "cg-007",
+      "title": "CG 007",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11005.5fl80xxyn8.jpg"
+    },
+    {
+      "id": "cg-008",
+      "title": "CG 008",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11004.2oc5svbukw.jpg"
+    },
+    {
+      "id": "cg-009",
+      "title": "CG 009",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11003.2oc5svbukd.jpg"
+    },
+    {
+      "id": "cg-010",
+      "title": "CG 010",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11002.b9jbny1d8.jpg"
+    },
+    {
+      "id": "cg-011",
+      "title": "CG 011",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev11001.2oc5svbujd.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "Stories",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/Stories.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/アンラッキーリバース-Unlucky-Re：Birth／Reverse-Sound-Track.1ovs8bt65f.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "オルターニアへようこそ",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%82%AA%E3%83%AB%E3%82%BF%E3%83%BC%E3%83%8B%E3%82%A2%E3%81%B8%E3%82%88%E3%81%86%E3%81%93%E3%81%9D.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/アンラッキーリバース-Unlucky-Re：Birth／Reverse-Sound-Track.1ovs8bt65f.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "ラブ*プライオリティ",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%83%A9%E3%83%96%EF%BC%8A%E3%83%97%E3%83%A9%E3%82%A4%E3%82%AA%E3%83%AA%E3%83%86%E3%82%A3.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/アンラッキーリバース-Unlucky-Re：Birth／Reverse-Sound-Track.1ovs8bt65f.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "恋の始まり -MUSIC BOX-",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%81%8B%E3%81%AE%E5%A7%8B%E3%81%BE%E3%82%8A%20-MUSIC%20BOX-.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/アンラッキーリバース-Unlucky-Re：Birth／Reverse-Sound-Track.1ovs8bt65f.jpg"
+    },
+    {
+      "id": "bgm-005",
+      "title": "恋の始まり",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%81%8B%E3%81%AE%E5%A7%8B%E3%81%BE%E3%82%8A.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/アンラッキーリバース-Unlucky-Re：Birth／Reverse-Sound-Track.1ovs8bt65f.jpg"
+    }
+  ]
+}

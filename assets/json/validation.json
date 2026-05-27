@@ -1,0 +1,14 @@
+{
+  "totals": {
+    "jsonFiles": 67,
+    "games": 21,
+    "invalidJson": 0,
+    "emptyLinks": 0,
+    "duplicateLinks": 0,
+    "duplicateTrackNames": 0
+  },
+  "invalidJson": [],
+  "emptyLinks": [],
+  "duplicateLinks": [],
+  "duplicateTrackNames": []
+}

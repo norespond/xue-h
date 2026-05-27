@@ -1,0 +1,64 @@
+{
+  "id": "013",
+  "title": "パティシエなにゃんこ",
+  "folder": "013",
+  "summary": "暂无",
+  "description": "",
+  "cover": "/assets/game/013/normal_b3bfab8f4338b1a4a9770c886cbf0ad7.jpg",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev013003.4joqlhq09m.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev013002.41yowwomnk.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-010-20/ev013001.13metegd57.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "be confidence (short ver.)",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/be%20confidence%20%28short%20ver.%29.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/スクランブルラバーズ-‐SCRAMBLE-LOVERS‐-VOCAL-SONG-COLLECTION.9rjr141cvv.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "Girly Side",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/Girly%20Side.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/スクランブルラバーズ-‐SCRAMBLE-LOVERS‐-VOCAL-SONG-COLLECTION.9rjr141cvv.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "キミと歩いてゆけたなら",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E3%82%AD%E3%83%9F%E3%81%A8%E6%AD%A9%E3%81%84%E3%81%A6%E3%82%86%E3%81%91%E3%81%9F%E3%81%AA%E3%82%89.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/スクランブルラバーズ-‐SCRAMBLE-LOVERS‐-VOCAL-SONG-COLLECTION.9rjr141cvv.jpg"
+    },
+    {
+      "id": "bgm-004",
+      "title": "君と奏でる季節",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E5%90%9B%E3%81%A8%E5%A5%8F%E3%81%A7%E3%82%8B%E5%AD%A3%E7%AF%80.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/スクランブルラバーズ-‐SCRAMBLE-LOVERS‐-VOCAL-SONG-COLLECTION.9rjr141cvv.jpg"
+    },
+    {
+      "id": "bgm-005",
+      "title": "放課後のパティシエ",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E6%94%BE%E8%AA%B2%E5%BE%8C%E3%81%AE%E3%83%91%E3%83%86%E3%82%A3%E3%82%B7%E3%82%A8.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/スクランブルラバーズ-‐SCRAMBLE-LOVERS‐-VOCAL-SONG-COLLECTION.9rjr141cvv.jpg"
+    },
+    {
+      "id": "bgm-006",
+      "title": "笑顔にメリークリスマス",
+      "audio": "https://icy-wave-c6a1.qiea71142.workers.dev/%E7%AC%91%E9%A1%94%E3%81%AB%E3%83%A1%E3%83%AA%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/スクランブルラバーズ-‐SCRAMBLE-LOVERS‐-VOCAL-SONG-COLLECTION.9rjr141cvv.jpg"
+    }
+  ]
+}
