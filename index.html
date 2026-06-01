@@ -35,24 +35,39 @@
     <main id="app-root" aria-live="polite"></main>
 
     <footer class="site-footer" id="about">
-      <p>资源均来源于网络，仅作为个人整理与本地测试用途。</p>
+      <p>个人收藏与分享用档案站，收纳想反复回看的 CG 与 BGM。</p>
     </footer>
   </div>
 
   <div class="player-bar" id="player-bar" hidden>
     <img class="player-cover" id="player-cover" alt="" />
     <div class="player-main">
-      <div class="player-title" id="player-title">未选择曲目</div>
-      <div class="player-time" id="player-time">00:00 / 00:00</div>
-      <input class="player-progress" id="player-progress" type="range" min="0" max="100" value="0" />
+      <div class="player-meta">
+        <span class="player-kicker" id="player-kicker">未播放</span>
+        <div class="player-title" id="player-title">未选择曲目</div>
+      </div>
+      <div class="player-progress-row">
+        <span class="player-time" id="player-current">00:00</span>
+        <input class="player-progress" id="player-progress" type="range" min="0" max="1000" value="0" aria-label="播放进度" />
+        <span class="player-time" id="player-duration">00:00</span>
+      </div>
+      <div class="player-status" id="player-status" aria-live="polite"></div>
     </div>
     <div class="player-controls" aria-label="播放器控制">
       <button class="player-button" type="button" id="player-prev" aria-label="上一首">上一首</button>
-      <button class="player-button" type="button" id="player-toggle" aria-label="播放或暂停">播放</button>
+      <button class="player-button player-toggle" type="button" id="player-toggle" aria-label="播放或暂停" aria-pressed="false">播放</button>
       <button class="player-button" type="button" id="player-next" aria-label="下一首">下一首</button>
+      <button class="player-button" type="button" id="player-queue-toggle" aria-label="展开播放列表" aria-expanded="false">列表 0</button>
       <button class="player-button player-close" type="button" id="player-close" aria-label="关闭播放器">关闭</button>
     </div>
-    <audio id="audio-player"></audio>
+    <div class="player-queue" id="player-queue" hidden>
+      <div class="player-queue-head">
+        <span>播放列表</span>
+        <span id="player-queue-count">0 首</span>
+      </div>
+      <div class="player-queue-list" id="player-queue-list" aria-label="播放列表"></div>
+    </div>
+    <audio id="audio-player" preload="metadata"></audio>
   </div>
 
   <div class="cg-viewer" id="cg-viewer" hidden aria-modal="true" role="dialog" aria-label="CG 预览">

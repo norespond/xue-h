@@ -13,7 +13,14 @@ const playerPrev = document.querySelector("#player-prev");
 const playerNext = document.querySelector("#player-next");
 const playerClose = document.querySelector("#player-close");
 const playerProgress = document.querySelector("#player-progress");
-const playerTime = document.querySelector("#player-time");
+const playerCurrent = document.querySelector("#player-current");
+const playerDuration = document.querySelector("#player-duration");
+const playerKicker = document.querySelector("#player-kicker");
+const playerStatus = document.querySelector("#player-status");
+const playerQueueToggle = document.querySelector("#player-queue-toggle");
+const playerQueue = document.querySelector("#player-queue");
+const playerQueueCount = document.querySelector("#player-queue-count");
+const playerQueueList = document.querySelector("#player-queue-list");
 const audio = document.querySelector("#audio-player");
 
 const cgViewer = document.querySelector("#cg-viewer");
@@ -37,6 +44,7 @@ let activeTrackButton = null;
 let currentCgs = [];
 let currentCgIndex = -1;
 let playerErrorMessage = "";
+let isPlayerQueueOpen = false;
 
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
@@ -130,9 +138,9 @@ function renderHomeShell() {
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Galgame CG / BGM Archive</p>
-        <h1 id="hero-title">把喜欢的作品，整理成安静的视听档案。</h1>
+        <h1 id="hero-title">把喜欢的作品，整理成可回看的视听档案。</h1>
         <p class="hero-text">
-          以游戏为单位收纳介绍、CG 与 BGM。这里先从测试资源开始，慢慢打磨成一个适合回看和试听的收藏馆。
+          以游戏为单位收藏和分享简介、CG 与 BGM。这里保留的是个人想反复回看的片段。
         </p>
         <div class="hero-stats" aria-label="当前档案状态">
           <span><strong id="game-count">0</strong> game</span>
@@ -156,10 +164,10 @@ function renderHomeShell() {
     <section class="info-band" id="updates" aria-labelledby="updates-title">
       <div>
         <p class="eyebrow">Archive</p>
-        <h2 id="updates-title">整理完成</h2>
+        <h2 id="updates-title">收藏札记</h2>
       </div>
       <p>
-        现有作品的简介、封面、CG 与 BGM 已整理完成。后续只需维护 JSON 数据、补充未归档资源，并在更新后重新生成与校验数据。
+        这里不追求完整收录，只把值得留下的画面、旋律和简介安静归档。
       </p>
     </section>
   `;
@@ -282,10 +290,15 @@ function renderTracks(tracks) {
       ${tracks
         .map(
           (track, index) => `
-            <button class="track-button${track.audio === currentTrackSrc ? " is-active" : ""}" type="button" data-track-index="${index}"${track.audio === currentTrackSrc ? ' aria-current="true"' : ""}>
-              <span class="track-index">${String(index + 1).padStart(2, "0")}</span>
-              <span class="track-title">${escapeHtml(track.title)}</span>
-            </button>
+            <div class="track-row${track.audio === currentTrackSrc ? " is-active" : ""}">
+              <button class="track-button${track.audio === currentTrackSrc ? " is-active" : ""}" type="button" data-track-index="${index}" data-track-src="${escapeHtml(track.audio)}"${track.audio === currentTrackSrc ? ' aria-current="true"' : ""}>
+                <img class="track-cover" src="${escapeHtml(normalizePath(track.cover))}" alt="" loading="lazy" decoding="async" />
+                <span class="track-meta">
+                  <span class="track-index">${String(index + 1).padStart(2, "0")}</span>
+                  <span class="track-title">${escapeHtml(track.title)}</span>
+                </span>
+              </button>
+            </div>
           `,
         )
         .join("")}
@@ -413,7 +426,7 @@ function bindTrackButtons(tracks) {
   activeTrackButton = appRoot.querySelector(".track-button.is-active");
   appRoot.querySelectorAll(".track-button").forEach((button) => {
     button.addEventListener("click", () => {
-      playTrack(Number(button.dataset.trackIndex), tracks);
+      handleTrackPlayRequest(tracks[Number(button.dataset.trackIndex)]);
     });
   });
 }
@@ -478,13 +491,130 @@ function formatTime(seconds) {
   return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
 }
 
-function updatePlayerTime() {
-  playerTime.textContent = playerErrorMessage || `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+function updatePlayerProgress() {
+  const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
+  const currentTime = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+  playerCurrent.textContent = formatTime(currentTime);
+  playerDuration.textContent = formatTime(duration);
+  playerProgress.value = duration ? String((currentTime / duration) * Number(playerProgress.max)) : "0";
+}
+
+function setPlayerStatus(message = "") {
+  playerStatus.textContent = message;
+  playerStatus.classList.toggle("is-empty", !message);
+}
+
+function setPlayerPlaying(isPlaying) {
+  playerToggle.textContent = isPlaying ? "暂停" : "播放";
+  playerToggle.setAttribute("aria-pressed", String(isPlaying));
+  playerBar.classList.toggle("is-playing", isPlaying);
+}
+
+function updatePlayerKicker() {
+  if (currentTrackIndex < 0 || !currentPlaylist.length) {
+    playerKicker.textContent = "未播放";
+    return;
+  }
+  playerKicker.textContent = `${currentTrackIndex + 1} / ${currentPlaylist.length}`;
+}
+
+function makeTrackKey(track) {
+  return normalizePath(track?.audio || "");
+}
+
+function findQueuedTrackIndex(track) {
+  const key = makeTrackKey(track);
+  return currentPlaylist.findIndex((item) => makeTrackKey(item) === key);
+}
+
+function renderPlayerQueue() {
+  playerQueue.hidden = !currentPlaylist.length || !isPlayerQueueOpen;
+  playerQueueCount.textContent = `${currentPlaylist.length} 首`;
+  playerQueueToggle.textContent = `列表 ${currentPlaylist.length}`;
+  playerQueueToggle.setAttribute("aria-expanded", String(!playerQueue.hidden));
+  playerQueueToggle.setAttribute("aria-label", playerQueue.hidden ? "展开播放列表" : "收起播放列表");
+
+  if (!currentPlaylist.length) {
+    playerQueueList.replaceChildren();
+    return;
+  }
+
+  playerQueueList.innerHTML = currentPlaylist
+    .map(
+      (track, index) => `
+        <button class="player-queue-item${index === currentTrackIndex ? " is-current" : ""}" type="button" data-queue-index="${index}"${index === currentTrackIndex ? ' aria-current="true"' : ""}>
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <strong>${escapeHtml(track.title)}</strong>
+        </button>
+      `,
+    )
+    .join("");
+}
+
+function togglePlayerQueue() {
+  if (!currentPlaylist.length) {
+    isPlayerQueueOpen = false;
+    renderPlayerQueue();
+    setPlayerStatus("播放列表为空");
+    return;
+  }
+  isPlayerQueueOpen = !isPlayerQueueOpen;
+  renderPlayerQueue();
+}
+
+function addTrackToQueue(track) {
+  if (!track) return -1;
+  const existingIndex = findQueuedTrackIndex(track);
+  if (existingIndex >= 0) return existingIndex;
+
+  currentPlaylist.push(track);
+  renderPlayerQueue();
+  updatePlayerKicker();
+  return currentPlaylist.length - 1;
+}
+
+function setActiveTrackButtonBySrc(src) {
+  if (activeTrackButton) {
+    activeTrackButton.classList.remove("is-active");
+    activeTrackButton.removeAttribute("aria-current");
+  }
+
+  appRoot.querySelectorAll(".track-row.is-active").forEach((row) => {
+    row.classList.remove("is-active");
+  });
+
+  activeTrackButton = appRoot.querySelector(`.track-button[data-track-src="${CSS.escape(src)}"]`);
+  if (activeTrackButton) {
+    activeTrackButton.classList.add("is-active");
+    activeTrackButton.setAttribute("aria-current", "true");
+    activeTrackButton.closest(".track-row")?.classList.add("is-active");
+    activeTrackButton.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
+}
+
+function handleTrackPlayRequest(track) {
+  if (!track) return;
+  const requestedKey = makeTrackKey(track);
+  const currentKey = normalizePath(currentTrackSrc);
+  if (currentTrackIndex >= 0 && requestedKey !== currentKey) {
+    const existingIndex = findQueuedTrackIndex(track);
+    if (existingIndex >= 0) {
+      const [queuedTrack] = currentPlaylist.splice(existingIndex, 1);
+      if (existingIndex < currentTrackIndex) currentTrackIndex -= 1;
+      currentPlaylist.splice(currentTrackIndex + 1, 0, queuedTrack);
+    } else {
+      currentPlaylist.splice(currentTrackIndex + 1, 0, track);
+    }
+    playTrack(currentTrackIndex + 1);
+    return;
+  }
+  const queueIndex = addTrackToQueue(track);
+  playTrack(queueIndex);
 }
 
 function setPlayerError(message) {
   playerErrorMessage = message;
-  playerTime.textContent = message;
+  setPlayerStatus(message);
   playerBar.classList.toggle("has-error", Boolean(message));
   if (activeTrackButton) {
     activeTrackButton.classList.toggle("has-error", Boolean(message));
@@ -493,6 +623,7 @@ function setPlayerError(message) {
 
 function clearPlayerError() {
   playerErrorMessage = "";
+  setPlayerStatus("");
   playerBar.classList.remove("has-error");
   appRoot.querySelectorAll(".track-button.has-error").forEach((button) => {
     button.classList.remove("has-error");
@@ -500,23 +631,13 @@ function clearPlayerError() {
 }
 
 function setActiveTrackButton(index) {
-  if (activeTrackButton) {
-    activeTrackButton.classList.remove("is-active");
-    activeTrackButton.removeAttribute("aria-current");
-  }
-
-  activeTrackButton = appRoot.querySelector(`[data-track-index="${index}"]`);
-  if (activeTrackButton) {
-    activeTrackButton.classList.add("is-active");
-    activeTrackButton.setAttribute("aria-current", "true");
-    activeTrackButton.scrollIntoView({ block: "nearest", behavior: "smooth" });
-  }
+  const track = currentPlaylist[index];
+  setActiveTrackButtonBySrc(track?.audio || "");
 }
 
 function handlePlaybackError(error) {
   if (error?.name === "AbortError") return;
-  playerToggle.textContent = "播放";
-  playerToggle.setAttribute("aria-pressed", "false");
+  setPlayerPlaying(false);
   setPlayerError("播放失败，请检查音频链接或切换下一首");
   console.error("Failed to play track:", error);
 }
@@ -536,22 +657,31 @@ function playTrack(index, playlist = currentPlaylist) {
   playerCover.classList.remove("is-fallback-image");
   playerCover.alt = `${track.title} 封面`;
   playerTitle.textContent = track.title;
-  playerToggle.textContent = "暂停";
-  playerToggle.setAttribute("aria-pressed", "true");
-  playerProgress.value = "0";
-  updatePlayerTime();
+  setPlayerPlaying(true);
+  updatePlayerKicker();
+  renderPlayerQueue();
+  updatePlayerProgress();
+  setPlayerStatus("正在加载...");
   playerBar.hidden = false;
   audio.play().catch(handlePlaybackError);
 }
 
 function playNextTrack() {
-  if (!currentPlaylist.length) return;
-  playTrack(currentTrackIndex >= currentPlaylist.length - 1 ? 0 : currentTrackIndex + 1);
+  if (currentTrackIndex < currentPlaylist.length - 1) {
+    playTrack(currentTrackIndex + 1);
+    return;
+  }
+  setPlayerPlaying(false);
+  setPlayerStatus("已经是最后一首");
 }
 
 function playPrevTrack() {
   if (!currentPlaylist.length) return;
-  playTrack(currentTrackIndex <= 0 ? currentPlaylist.length - 1 : currentTrackIndex - 1);
+  if (currentTrackIndex > 0) {
+    playTrack(currentTrackIndex - 1);
+    return;
+  }
+  setPlayerStatus("已经是第一首");
 }
 
 function closePlayer() {
@@ -559,13 +689,17 @@ function closePlayer() {
   audio.removeAttribute("src");
   audio.load();
   playerBar.hidden = true;
-  playerToggle.textContent = "播放";
-  playerToggle.setAttribute("aria-pressed", "false");
+  setPlayerPlaying(false);
   playerProgress.value = "0";
-  playerTime.textContent = "00:00 / 00:00";
+  playerCurrent.textContent = "00:00";
+  playerDuration.textContent = "00:00";
+  playerKicker.textContent = "未播放";
+  setPlayerStatus("");
   currentPlaylist = [];
   currentTrackIndex = -1;
   currentTrackSrc = "";
+  isPlayerQueueOpen = false;
+  renderPlayerQueue();
   if (activeTrackButton) {
     activeTrackButton.classList.remove("is-active", "has-error");
     activeTrackButton.removeAttribute("aria-current");
@@ -593,6 +727,8 @@ async function loadGames() {
 
 function bindGlobalEvents() {
   setTheme(localStorage.getItem(storageKey) || "night");
+  setPlayerStatus("");
+  renderPlayerQueue();
 
   themeToggle.addEventListener("click", () => {
     const currentTheme = document.documentElement.dataset.theme || "night";
@@ -632,42 +768,67 @@ function bindGlobalEvents() {
   playerToggle.addEventListener("click", () => {
     if (!audio.src) return;
     if (audio.paused) {
+      setPlayerStatus("正在加载...");
       audio
         .play()
         .then(() => {
-          playerToggle.textContent = "暂停";
-          playerToggle.setAttribute("aria-pressed", "true");
+          setPlayerPlaying(true);
+          setPlayerStatus("");
         })
         .catch(handlePlaybackError);
     } else {
       audio.pause();
-      playerToggle.textContent = "播放";
-      playerToggle.setAttribute("aria-pressed", "false");
+      setPlayerPlaying(false);
+      setPlayerStatus("已暂停");
     }
   });
   playerPrev.addEventListener("click", playPrevTrack);
   playerNext.addEventListener("click", playNextTrack);
+  playerQueueToggle.addEventListener("click", togglePlayerQueue);
+  playerQueueList.addEventListener("click", (event) => {
+    const item = event.target.closest(".player-queue-item");
+    if (!item) return;
+    playTrack(Number(item.dataset.queueIndex));
+  });
   playerClose.addEventListener("click", closePlayer);
   playerCover.addEventListener("error", () => handleImageError(playerCover));
   playerProgress.addEventListener("input", () => {
     if (!audio.duration) return;
-    audio.currentTime = (Number(playerProgress.value) / 100) * audio.duration;
+    audio.currentTime = (Number(playerProgress.value) / Number(playerProgress.max)) * audio.duration;
+    updatePlayerProgress();
   });
   audio.addEventListener("timeupdate", () => {
     if (!audio.duration || playerErrorMessage) return;
-    playerProgress.value = String((audio.currentTime / audio.duration) * 100);
-    updatePlayerTime();
+    updatePlayerProgress();
   });
   audio.addEventListener("loadedmetadata", () => {
     clearPlayerError();
-    updatePlayerTime();
+    updatePlayerProgress();
+    setPlayerStatus("");
+  });
+  audio.addEventListener("playing", () => {
+    setPlayerPlaying(true);
+    setPlayerStatus("");
+  });
+  audio.addEventListener("waiting", () => {
+    if (!audio.paused) setPlayerStatus("正在缓冲...");
+  });
+  audio.addEventListener("pause", () => {
+    if (playerBar.hidden || playerErrorMessage) return;
+    setPlayerPlaying(false);
   });
   audio.addEventListener("error", () => {
-    playerToggle.textContent = "播放";
-    playerToggle.setAttribute("aria-pressed", "false");
+    setPlayerPlaying(false);
     setPlayerError("播放失败，请检查音频链接或切换下一首");
   });
-  audio.addEventListener("ended", playNextTrack);
+  audio.addEventListener("ended", () => {
+    if (currentTrackIndex < currentPlaylist.length - 1) {
+      playNextTrack();
+      return;
+    }
+    setPlayerPlaying(false);
+    setPlayerStatus("播放结束");
+  });
 
   viewerClose.addEventListener("click", closeCgViewer);
   viewerPrev.addEventListener("click", showPrevCg);
