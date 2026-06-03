@@ -142,11 +142,6 @@ function renderHomeShell() {
         <p class="hero-text">
           以游戏为单位收藏和分享简介、CG 与 BGM。这里保留的是个人想反复回看的片段。
         </p>
-        <div class="hero-stats" aria-label="当前档案状态">
-          <span><strong id="game-count">0</strong> game</span>
-          <span><strong id="cg-count">0</strong> cg</span>
-          <span><strong id="bgm-count">0</strong> bgm</span>
-        </div>
       </div>
     </section>
 
@@ -204,22 +199,19 @@ function renderHome({ restoreScroll = false } = {}) {
   document.title = "雪蕐档案馆";
   appBack.hidden = true;
   renderHomeShell();
-
-  const regularGames = allGames.filter((game) => !isUnclassified(game));
-  appRoot.querySelector("#game-count").textContent = String(regularGames.length);
-  appRoot.querySelector("#cg-count").textContent = String(regularGames.reduce((total, game) => total + (game.cgCount || 0), 0));
-  appRoot.querySelector("#bgm-count").textContent = String(regularGames.reduce((total, game) => total + (game.bgmCount || 0), 0));
-
   const grid = appRoot.querySelector("#game-grid");
   const resultCount = appRoot.querySelector("#result-count");
+  const regularGames = allGames.filter((game) => !isUnclassified(game));
   const keyword = gameSearch.value.trim();
   const normalizedKeyword = normalizeText(keyword);
-  const filteredGames = normalizedKeyword
+  const keywordFilteredGames = normalizedKeyword
     ? allGames.filter((game) => {
-        const haystack = normalizeText(`${game.title} ${game.summary || ""} ${game.folder || ""}`);
+        const bgmTitles = Array.isArray(game.bgmTitles) ? game.bgmTitles.join(" ") : "";
+        const haystack = normalizeText(`${game.title} ${bgmTitles}`);
         return haystack.includes(normalizedKeyword);
       })
     : allGames;
+  const filteredGames = keywordFilteredGames;
 
   clearSearch.hidden = !keyword;
   resultCount.textContent =
@@ -494,9 +486,11 @@ function formatTime(seconds) {
 function updatePlayerProgress() {
   const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
   const currentTime = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+  const progressPercent = duration ? (currentTime / duration) * 100 : 0;
   playerCurrent.textContent = formatTime(currentTime);
   playerDuration.textContent = formatTime(duration);
   playerProgress.value = duration ? String((currentTime / duration) * Number(playerProgress.max)) : "0";
+  playerBar.style.setProperty("--player-progress", `${progressPercent}%`);
 }
 
 function setPlayerStatus(message = "") {
@@ -695,6 +689,7 @@ function closePlayer() {
   playerBar.hidden = true;
   setPlayerPlaying(false);
   playerProgress.value = "0";
+  playerBar.style.setProperty("--player-progress", "0%");
   playerCurrent.textContent = "00:00";
   playerDuration.textContent = "00:00";
   playerKicker.textContent = "未播放";
