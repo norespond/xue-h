@@ -1,18 +1,18 @@
 # 雪蕐档案馆
 
-一个个人收藏与分享用的 Galgame 视听档案站，用于按游戏整理封面、简介、CG 和 BGM。当前项目是单页静态应用 + JSON 数据驱动；BGM 已基本迁移到 Cloudflare R2/Worker，CG 展示图开始使用 PicX 图床，游戏封面暂时保留在项目目录中。
+一个个人收藏与分享用的 Galgame 视听档案站，用于按游戏整理封面、简介、CG 和 BGM；站名中的“雪蕐”是游戏角色名。当前项目是单页静态应用 + JSON 数据驱动，已部署到 Cloudflare Pages。
 
-项目定位是个人收藏、分享与回看用的“视听档案馆”，不是资源分发站。CG 与 BGM 只收录想保留的精选内容，不追求完整；CG 明确不收录 R18 内容；页面只提供 CG 预览和 BGM 在线播放，不提供游戏本体、CG 或 BGM 下载入口。
+项目定位是个人收藏、分享与回看用的“视听档案馆”，不是资源分发站。CG 与 BGM 只收录想保留的内容，不追求完整；CG 明确不收录 R18 内容；页面只提供 CG 预览和 BGM 在线播放，不提供游戏本体、CG 或 BGM 下载入口。
 
 ## 当前状态
 
-- 首页：封面墙 + 游戏名 + 导航栏搜索；统计中的作品数不包含 `000` 未归档资源池。
+- 首页：封面墙 + 游戏名 + 导航栏搜索；搜索支持游戏标题和 BGM 曲名。
 - 单页路由：`index.html` 内完成首页/详情切换，详情 URL 使用 `index.html?id=001`；旧 `game.html?id=001` 会跳转到新路由。
 - 详情页：封面、标题、简介、CG、BGM、返回键和底部播放器。
-- 未归档资源：`assets/game/000` 会作为“未归档资源池”出现在页面中，用于展示暂未确定作品归属的资源；CG 可为空，不计入缺 CG。
+- `000`：作为“未分类资源与私货”出现在页面中，用于放置暂未分类的资源，以及不适合归入单个作品档案的个人收藏内容；它可以包含 CG 和 BGM，但不计入普通游戏作品数。
 - 简介：长简介支持展开/收起，自动分段脚本已可用。
-- CG：详情页会按数量自动切换展示布局，支持点击大图预览、加载状态、上一张/下一张、Esc 关闭、方向键切换；图片加载失败时会使用默认封面兜底。
-- BGM：详情页以“专辑封面 + 曲名”的试听卡片展示；底部播放器支持播放/暂停、上一首/下一首、关闭、进度条、时间显示和可折叠播放列表。播放列表默认折叠，并从播放器上方向上展开；点击新 BGM 会立即替换当前播放曲目，被替换曲目保留为上一首。播放器在单页路由切换时保持常驻，播放失败时会在播放器中提示。
+- CG：详情页按数量自动切换展示布局，支持点击大图预览、加载状态、上一张/下一张、Esc 关闭、方向键切换；图片加载失败时使用默认封面兜底。
+- BGM：详情页以“专辑封面 + 曲名”的试听卡片展示；底部播放器支持圆形封面、顶部进度线、播放/暂停、上一首/下一首、关闭、进度拖动、时间显示、浮层播放列表和错误提示；播放器在单页路由切换时保持常驻。
 - 主题：日间/夜间切换，保存在浏览器本地。
 - 数据报告：生成脚本会输出 `assets/json/report.json`。
 
@@ -22,55 +22,33 @@
 assets/
   game/
     000/
-      cover.png|cover.json # 默认封面配置
-      未分类.json        # 未归档资源索引
-      bgm/               # 未确定出处的旧音频资源
-        song.json         # 未在已归档作品中使用的云端歌曲
-      cg/                # 未确定出处的旧图片资源，可为空
-    001/
-      game.json          # 游戏基础信息
-      *.jpg|*.png|*.webp # 根目录图片作为游戏封面，暂时本地保留
+      cover.json          # 默认封面链接配置
+      未分类.json         # 未分类资源与私货的基础说明
       cg/
-        cg.json          # CG 展示图链接
+        cg.json           # 未分类/私货 CG 展示图链接
       bgm/
-        bgm.json         # BGM 云端链接
+        bgm.json          # 未分类/私货 BGM 云端链接
+    001/
+      game.json           # 游戏基础信息，cover 字段填写封面图床链接
+      cg/
+        cg.json           # CG 展示图链接
+      bgm/
+        bgm.json          # BGM 云端链接
   json/
-    games.json           # 首页索引，由脚本生成
-    report.json          # 数据检查报告，由脚本生成
+    games.json            # 首页索引，由脚本生成
+    report.json           # 数据检查报告，由脚本生成
     games/
-      001.json           # 详情页数据，由脚本生成
+      001.json            # 详情页数据，由脚本生成
 scripts/
-  generate_game_json.py
-  import_song_links.py
-  preview_summary_breaks.py
-  validate_assets.py
+  generate_game_json.py      # 生成首页索引、详情 JSON 和数据报告
+  import_song_links.py       # 根据本地 BGM 文件名写入/合并 bgm.json
+  preview_summary_breaks.py  # 预览或写回简介自动分段
+  validate_assets.py         # 校验 JSON、空链接、重复链接和重复曲名
 ```
 
-`assets/game/000` 作为公共/未归档资源池，会以“未归档资源池”出现在首页和详情页中，用于暂存、试听或预览暂未确定作品归属的旧资源。它是特殊目录：CG 可以为空，生成报告不会把它计入缺 CG；确认资源归属后，再移动到对应 `assets/game/{id}` 目录并重新生成数据。
+`assets/game/000/cover.json` 是站点默认封面配置。当前默认封面已改为链接形式，不再使用 `assets/game/000/cover.png`。当前端图片加载失败、BGM 没有独立封面、或生成脚本需要兜底封面时，会读取 `cover.json` 中的链接。
 
-`cover.png` / `cover.json` 用作站点默认封面；BGM 没有封面时，会优先使用 `assets/game/000/cover.png` 兜底，如果不存在，也支持读取 `assets/game/000/cover.json` 里的 `src`。前端图片加载失败时也会读取 `assets/game/000/cover.json` 作为默认封面。
-
-`assets/game/000/未分类.json` 用来记录暂未确定出处的旧资源。当前约定格式：
-
-```json
-{
-  "id": "000",
-  "name": "未归档资源池",
-  "description": "用于暂存、试听或预览暂未确定出处的旧资源。",
-  "items": [
-    {
-      "name": "资源名",
-      "type": "bgm",
-      "path": "assets/game/000/bgm/example.mp3",
-      "note": "未确定"
-    }
-  ]
-}
-```
-
-`note` 字段统一写为 `未确定`。
-
-`assets/game/000/bgm/song.json` 用来保存根目录 `song.json` 中尚未被已归档作品使用的云端歌曲。当前只保留 `title`、`cover`、`url`，不保留专辑信息。
+普通游戏封面统一写在对应目录的 `game.json` 的 `cover` 字段中。封面图床迁移已完成，后续不需要保留本地封面迁移流程。
 
 ## 数据格式
 
@@ -80,9 +58,12 @@ scripts/
 {
   "id": "001",
   "title": "游戏标题",
+  "cover": "https://example.com/game-cover.jpg",
   "summary": "游戏简介"
 }
 ```
+
+`cover` 为游戏封面图床链接，是首页和详情页封面的优先来源。
 
 ### bgm/bgm.json
 
@@ -97,6 +78,8 @@ scripts/
   ]
 }
 ```
+
+`cover` 是该游戏 BGM 的统一封面。`tracks` 中只保留曲名和音频链接。
 
 ### cg/cg.json
 
@@ -128,7 +111,7 @@ scripts/
 
 ## 生成数据
 
-修改 `assets/game/*/game.json`、封面、`cg.json` 或 `bgm.json` 后运行：
+修改 `assets/game/*/game.json`、`cg.json` 或 `bgm.json` 后运行：
 
 ```powershell
 python scripts\generate_game_json.py
@@ -144,21 +127,20 @@ assets/json/report.json
 
 报告包含：
 
-- 收录条目总数，包含特殊的 `000` 未归档资源池
+- 收录条目总数，包含特殊的 `000`
 - 已有简介、封面、BGM、CG 的数量
 - 缺简介、缺封面、缺 BGM、缺 CG 的游戏
 - 使用默认 BGM 封面的游戏
 
-首页搜索支持游戏标题、简介和编号，搜索词会同步到 URL 的 `?q=` 参数，方便刷新或分享当前筛选结果；从详情页返回首页时，也会恢复上次的搜索和滚动位置。首页列表当前按编号升序展示，特殊的 `000` 未归档资源池固定排在最后。
+首页搜索支持游戏标题和 BGM 曲名，搜索词会同步到 URL 的 `?q=` 参数。首页列表当前按编号升序展示，特殊的 `000` 固定排在最后。
 
 每次补完一批资源后，推荐固定执行：
 
 ```powershell
 python scripts\generate_game_json.py
 python scripts\validate_assets.py
+node --check assets\js\app.js
 ```
-
-确认生成数据和校验报告都正常后，再本地预览页面。
 
 ## 资源校验
 
@@ -176,51 +158,34 @@ assets/json/validation.json
 
 ## 导入云端 BGM 链接
 
-如果根目录存在 `song.json`，且其中包含之前上传到 Cloudflare R2 的 BGM 信息：
+当前 BGM 流程为：
 
-```json
-{
-  "title": "曲名",
-  "album": "专辑名",
-  "cover": "https://example.com/cover.jpg",
-  "url": "https://example.com/song.mp3"
-}
-```
+1. 先将音频上传到 Cloudflare R2，并由 Worker 下发。
+2. 将已上传的同名音频文件临时放入对应游戏的 `bgm/` 目录。
+3. 使用脚本根据目录中的本地文件名和 Worker 域名生成 `bgm/bgm.json`。
 
-预览匹配结果：
+预览匹配/生成结果：
 
 ```powershell
-python scripts\import_song_links.py
+python scripts\import_song_links.py --game 020 --worker-base-url https://example.workers.dev
 ```
 
-写入各游戏目录下的 `bgm/bgm.json`：
+写入单个游戏目录：
 
 ```powershell
-python scripts\import_song_links.py --write
+python scripts\import_song_links.py --game 020 --worker-base-url https://example.workers.dev --write
 python scripts\generate_game_json.py
+python scripts\validate_assets.py
 ```
 
-只处理单个游戏目录时使用 `--game`：
-
-```powershell
-python scripts\import_song_links.py --game 020 --write
-python scripts\generate_game_json.py
-```
-
-脚本会按本地 BGM 文件名匹配 `song.json` 中的曲名。匹配不到时，会从已有歌曲链接推断 Worker 域名，并用本地文件名生成 Worker 下发链接。即使根目录暂时没有 `song.json`，也会尝试从已有 `bgm/bgm.json` 里的链接推断 Worker 域名。也可以手动指定：
-
-```powershell
-python scripts\import_song_links.py --worker-base-url https://example.workers.dev --write
-```
-
-导入脚本现在是合并写入：往已有目录追加本地 BGM 后再执行 `--write`，不会覆盖旧 `bgm.json` 里的已有曲目。
+如果不传 `--worker-base-url`，脚本会尝试从已有 `bgm/bgm.json` 中推断 Worker 域名。导入脚本是合并写入：往已有目录追加本地 BGM 后再执行 `--write`，不会覆盖旧 `bgm.json` 里的已有曲目。
 
 当前推荐的新增资源流程：
 
 ```powershell
-# 1. 新建 assets\game\{id}，写 game.json；CG 可直接写 cg\cg.json
+# 1. 新建 assets\game\{id}，写 game.json；cover 填图床封面链接，CG 可直接写 cg\cg.json
 # 2. 上传 BGM 到 R2/Worker，并把已上传的同名音频临时放入 bgm\
-python scripts\import_song_links.py --game {id} --write
+python scripts\import_song_links.py --game {id} --worker-base-url https://example.workers.dev --write
 python scripts\generate_game_json.py
 python scripts\validate_assets.py
 ```
@@ -239,7 +204,7 @@ python scripts\preview_summary_breaks.py assets\game\001\game.json
 python scripts\preview_summary_breaks.py assets\game\001\game.json --write
 ```
 
-批量写回所有游戏：
+批量写回所有普通游戏：
 
 ```powershell
 $paths = Get-ChildItem -Path assets\game -Directory |
@@ -250,8 +215,6 @@ $paths = Get-ChildItem -Path assets\game -Directory |
 python scripts\preview_summary_breaks.py --write @paths
 python scripts\generate_game_json.py
 ```
-
-断句规则覆盖 `。`、`！`、`？`、`……`、`…`、`!!`、`??`、`!?`、`?!`、`？！`、`!？`，并会把 `故事简介：`、`剧情简介：`、`STORY：` 等小标题单独分行。
 
 ## 本地预览
 
@@ -268,27 +231,11 @@ http://127.0.0.1:5173/
 http://127.0.0.1:5173/index.html?id=001
 ```
 
-## 新窗口接续
+## 部署
 
-已完成：
+项目已部署到 Cloudflare Pages。当前为静态站点，无构建步骤；部署入口为仓库根目录。
 
-1. CG 预览基础功能已完成：支持大图预览、上一张/下一张、Esc 关闭、方向键切换和加载状态。
-2. 首页导航已简化：只保留品牌、主题切换和搜索框，排序与装饰导航已移除。
-3. 详情页播放器已重做：支持底部常驻、播放队列、向上展开的播放列表、上一首/下一首、进度拖动、加载/错误状态和关闭播放器。
-4. SPA 初版已完成：`index.html` 负责首页和详情切换，播放器在路由切换时保持常驻；旧 `game.html` 会跳转到新详情路由。
-5. 旧的 `assets/js/home.js` / `assets/js/game.js` 已清理，当前前端入口为 `assets/js/app.js`。
-
-当前比较适合继续做的任务：
-
-1. 继续补充资源校验规则：可增加远程链接可达性、图片尺寸、音频 MIME 类型等检查。
-2. 后续新增资源时，按“生成数据 -> 校验资源 -> 本地预览”的流程检查即可。
-3. 如准备公开部署，可再补一轮远程链接可达性检查和大文件策略确认。
-
-## Git 准备
-
-当前目录已初始化 Git 仓库。已添加 `.gitignore`，用于排除 Python 缓存、`.vscode` 和本地音频文件；`bgm.json` 等云端链接数据仍会保留在仓库中。
-
-提交前建议检查：
+当前开发方式为：在当前分支继续修改，完成到一定阶段后再同步/合并到主线并部署。提交前建议运行：
 
 ```powershell
 python scripts\generate_game_json.py
@@ -296,14 +243,12 @@ python scripts\validate_assets.py
 node --check assets\js\app.js
 ```
 
-当前需要特别留意的大文件：
+## 后续任务
 
-- `assets/game/011/Box_Front.png`，约 7.7 MB
-- `assets/themes/image/moon.png`，约 5.0 MB
-- `assets/themes/image/sun.png`，约 4.7 MB
-- `assets/game/005/aboutdialog.png`，约 1.3 MB
-- `assets/game/020/bgm/輝きのリメンブランス.mp3`，约 4.4 MB，已被 `.gitignore` 排除
+1. 继续补充资源校验规则，例如图片尺寸、音频时长等检查。
+2. 继续微调播放器观感和移动端布局。
+3. 后续新增资源时，按“生成数据 -> 校验资源 -> 本地预览 -> 部署”的流程检查即可。
 
 ## 说明
 
-本站为个人收藏与分享用档案站，仅提供 CG 预览和 BGM 在线播放；不提供游戏本体，不提供 CG/BGM 下载入口。
+本站为个人收藏与分享用档案站，仅提供 CG 预览和 BGM 在线播放；不提供游戏本体，不提供 CG/BGM 下载入口。资源均来源于网络。
