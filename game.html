@@ -7,6 +7,7 @@
     <link rel="icon" href="assets/icon/favicon.ico" />
     <link rel="preconnect" href="https://norespond.github.io" crossorigin />
     <link rel="stylesheet" href="assets/css/game.css" />
+    <link rel="stylesheet" href="assets/css/player.css" />
   </head>
   <body>
     <div class="page-shell">
@@ -36,10 +37,22 @@
         <input class="player-progress" id="player-progress" type="range" min="0" max="100" value="0" />
       </div>
       <div class="player-controls" aria-label="播放器控制">
-        <button class="player-button" type="button" id="player-prev" aria-label="上一首">上一首</button>
-        <button class="player-button" type="button" id="player-toggle" aria-label="播放或暂停">播放</button>
-        <button class="player-button" type="button" id="player-next" aria-label="下一首">下一首</button>
-        <button class="player-button player-close" type="button" id="player-close" aria-label="关闭播放器">关闭</button>
+        <button class="player-button" type="button" id="player-prev" aria-label="上一首">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><title>上一首</title><path d="M13 6v12l-8-6 8-6zm8 0v12h-2V6h2z"/></svg>
+          <span class="visually-hidden">上一首</span>
+        </button>
+        <button class="player-button" type="button" id="player-toggle" aria-label="播放或暂停" aria-pressed="false">
+          <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><title>播放/暂停</title><path d="M8 5v14l11-7z"/></svg>
+          <span class="visually-hidden">播放或暂停</span>
+        </button>
+        <button class="player-button" type="button" id="player-next" aria-label="下一首">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><title>下一首</title><path d="M5 6v12l8-6-8-6zm14 0v12h-2V6h2z"/></svg>
+          <span class="visually-hidden">下一首</span>
+        </button>
+        <button class="player-button player-close" type="button" id="player-close" aria-label="关闭播放器">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><title>关闭播放器</title><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <span class="visually-hidden">关闭播放器</span>
+        </button>
       </div>
       <audio id="audio-player"></audio>
     </div>

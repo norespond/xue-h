@@ -90,9 +90,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   min-height: 72px;
-  margin-left: calc(50% - 50vw);
+  margin-left: 0;
   padding-right: max(20px, calc((100vw - 1180px) / 2));
   padding-left: max(20px, calc((100vw - 1180px) / 2));
   gap: 24px;

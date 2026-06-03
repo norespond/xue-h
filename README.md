@@ -1,6 +1,6 @@
 # 雪蕐档案馆
 
-一个个人收藏与分享用的 Galgame 视听档案站，用于按游戏整理封面、简介、CG 和 BGM。当前项目是单页静态应用 + JSON 数据驱动；BGM 已基本迁移到 Cloudflare R2/Worker，CG 展示图开始使用 PicX 图床，游戏封面暂时保留在项目目录中。
+一个个人收藏与分享用的 Galgame 视听档案站，用于按游戏整理封面、简介、CG 和 BGM。当前项目是单页静态应用 + JSON 数据驱动；BGM 已基本迁移到 Cloudflare R2/Worker，CG 展示图与游戏封面开始使用 PicX 图床，封面链接记录在各游戏的 `game.json` 中。
 
 项目定位是个人收藏、分享与回看用的“视听档案馆”，不是资源分发站。CG 与 BGM 只收录想保留的精选内容，不追求完整；CG 明确不收录 R18 内容；页面只提供 CG 预览和 BGM 在线播放，不提供游戏本体、CG 或 BGM 下载入口。
 
@@ -28,12 +28,12 @@ assets/
         song.json         # 未在已归档作品中使用的云端歌曲
       cg/                # 未确定出处的旧图片资源，可为空
     001/
-      game.json          # 游戏基础信息
-      *.jpg|*.png|*.webp # 根目录图片作为游戏封面，暂时本地保留
+      game.json          # 游戏基础信息，cover 字段可填写图床封面链接
       cg/
         cg.json          # CG 展示图链接
       bgm/
         bgm.json         # BGM 云端链接
+    000/covers/          # 临时封面中转目录，用于上传图床前集中整理
   json/
     games.json           # 首页索引，由脚本生成
     report.json          # 数据检查报告，由脚本生成
@@ -48,7 +48,9 @@ scripts/
 
 `assets/game/000` 作为公共/未归档资源池，会以“未归档资源池”出现在首页和详情页中，用于暂存、试听或预览暂未确定作品归属的旧资源。它是特殊目录：CG 可以为空，生成报告不会把它计入缺 CG；确认资源归属后，再移动到对应 `assets/game/{id}` 目录并重新生成数据。
 
-`cover.png` / `cover.json` 用作站点默认封面；BGM 没有封面时，会优先使用 `assets/game/000/cover.png` 兜底，如果不存在，也支持读取 `assets/game/000/cover.json` 里的 `src`。前端图片加载失败时也会读取 `assets/game/000/cover.json` 作为默认封面。
+`game.json` 的 `cover` 字段是普通游戏封面的优先来源，推荐填写图床链接。若未填写，生成脚本仍会向后兼容本地 `cover.*` 或游戏目录根部第一张图片。
+
+`assets/game/000/cover.png` / `cover.json` 用作站点默认封面；BGM 没有封面时，会优先使用 `assets/game/000/cover.png` 兜底，如果不存在，也支持读取 `assets/game/000/cover.json` 里的 `src`。前端图片加载失败时也会读取 `assets/game/000/cover.json` 作为默认封面。
 
 `assets/game/000/未分类.json` 用来记录暂未确定出处的旧资源。当前约定格式：
 
@@ -80,9 +82,12 @@ scripts/
 {
   "id": "001",
   "title": "游戏标题",
+  "cover": "https://example.com/game-cover.jpg",
   "summary": "游戏简介"
 }
 ```
+
+`cover` 为可选字段；填写后会作为首页和详情页的游戏封面。未填写时，生成脚本会继续尝试读取本地封面图作为兼容兜底。
 
 ### bgm/bgm.json
 
@@ -126,9 +131,26 @@ scripts/
 
 页面只使用展示图链接，不规划原图下载字段或下载入口。
 
+## 本次更新
+
+- 调整布局：修复顶部导航在小屏/滚动时水平溢出（.site-header width 从 100vw 改为 100%）。
+- 播放器重设计：新增 assets/css/player.css，播放器改为居中固定底部浮层，圆形控件、醒目播放键和响应式折叠。
+- 图标与无障碍：播放器按钮改为内嵌 SVG（含 <title>），并添加 .visually-hidden 屏幕阅读器文本以提升可访问性；aria-label/aria-pressed 保留。
+- 远程链接校验：新增 scripts/validate_remote_links.py（可选 --check-remote 并发检测可达性与 MIME），会输出 assets/json/validation_remote.json。
+- 游戏封面图床迁移：`generate_game_json.py` 会优先读取 `game.json` 的 `cover` 字段；新增临时脚本 `stage_cover_images.py` / `apply_cover_links.py`，用于集中整理本地封面、解析上传后的 PicX 链接并写回各游戏 `game.json`。
+
+使用示例：
+
+```powershell
+# 基本校验
+python scripts\validate_assets.py
+# 远程检查（并发）
+python scripts\validate_remote_links.py --check-remote --workers 16
+```
+
 ## 生成数据
 
-修改 `assets/game/*/game.json`、封面、`cg.json` 或 `bgm.json` 后运行：
+修改 `assets/game/*/game.json`、`cg.json` 或 `bgm.json` 后运行：
 
 ```powershell
 python scripts\generate_game_json.py
@@ -150,6 +172,34 @@ assets/json/report.json
 - 使用默认 BGM 封面的游戏
 
 首页搜索支持游戏标题、简介和编号，搜索词会同步到 URL 的 `?q=` 参数，方便刷新或分享当前筛选结果；从详情页返回首页时，也会恢复上次的搜索和滚动位置。首页列表当前按编号升序展示，特殊的 `000` 未归档资源池固定排在最后。
+
+## 封面图床迁移
+
+普通游戏封面推荐存放在 `game.json` 的 `cover` 字段中。现有本地封面可先集中移动到 `assets/game/000/covers/`，上传图床后再批量写回：
+
+```powershell
+# 预览移动计划，不实际移动
+python scripts\stage_cover_images.py
+
+# 实际移动并按目录编号重命名，例如 001.jpg
+python scripts\stage_cover_images.py --write
+
+# 如需跳过可疑目录
+python scripts\stage_cover_images.py --exclude 005 --write
+```
+
+PicX 上传后，可把链接临时粘贴到根目录 `covers.json`。脚本会按 `001.random.jpg` 这类文件名前缀匹配游戏编号：
+
+```powershell
+# 预览写回计划
+python scripts\apply_cover_links.py
+
+# 写入各 assets\game\{id}\game.json 的 cover 字段
+python scripts\apply_cover_links.py --write
+
+python scripts\generate_game_json.py
+python scripts\validate_assets.py
+```
 
 每次补完一批资源后，推荐固定执行：
 
@@ -218,7 +268,7 @@ python scripts\import_song_links.py --worker-base-url https://example.workers.de
 当前推荐的新增资源流程：
 
 ```powershell
-# 1. 新建 assets\game\{id}，写 game.json；CG 可直接写 cg\cg.json
+# 1. 新建 assets\game\{id}，写 game.json；cover 填图床封面链接，CG 可直接写 cg\cg.json
 # 2. 上传 BGM 到 R2/Worker，并把已上传的同名音频临时放入 bgm\
 python scripts\import_song_links.py --game {id} --write
 python scripts\generate_game_json.py

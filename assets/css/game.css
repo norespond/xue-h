@@ -100,9 +100,9 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   min-height: 72px;
-  margin-left: calc(50% - 50vw);
+  margin-left: 0;
   padding-right: max(20px, calc((100vw - 1180px) / 2));
   padding-left: max(20px, calc((100vw - 1180px) / 2));
   gap: 24px;
@@ -648,7 +648,8 @@ h2 {
 }
 
 .player-bar.is-playing:not(.has-error) .player-cover {
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-strong) 18%, transparent);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--accent-strong) 18%, transparent);
 }
 
 .player-main {

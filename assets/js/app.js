@@ -505,8 +505,11 @@ function setPlayerStatus(message = "") {
 }
 
 function setPlayerPlaying(isPlaying) {
-  playerToggle.textContent = isPlaying ? "暂停" : "播放";
+  const PLAY_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  const PAUSE_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  playerToggle.innerHTML = isPlaying ? PAUSE_SVG : PLAY_SVG;
   playerToggle.setAttribute("aria-pressed", String(isPlaying));
+  playerToggle.classList.toggle("is-playing", isPlaying);
   playerBar.classList.toggle("is-playing", isPlaying);
 }
 
@@ -530,7 +533,8 @@ function findQueuedTrackIndex(track) {
 function renderPlayerQueue() {
   playerQueue.hidden = !currentPlaylist.length || !isPlayerQueueOpen;
   playerQueueCount.textContent = `${currentPlaylist.length} 首`;
-  playerQueueToggle.textContent = `列表 ${currentPlaylist.length}`;
+  const queueCountSpan = playerQueueToggle.querySelector('.player-queue-count');
+  if (queueCountSpan) queueCountSpan.textContent = String(currentPlaylist.length);
   playerQueueToggle.setAttribute("aria-expanded", String(!playerQueue.hidden));
   playerQueueToggle.setAttribute("aria-label", playerQueue.hidden ? "展开播放列表" : "收起播放列表");
 
@@ -850,6 +854,7 @@ function bindGlobalEvents() {
 
 async function init() {
   bindGlobalEvents();
+  setPlayerPlaying(false);
   try {
     await loadFallbackCover();
     await loadGames();

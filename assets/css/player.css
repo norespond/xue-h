@@ -1,0 +1,199 @@
+/* Player redesign: centered sticky bottom bar with compact controls */
+:root {
+  --player-height: 76px;
+}
+
+/* Accessibility helper: visually hidden but accessible to screen readers */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.player-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  gap: 0;
+  pointer-events: auto;
+}
+
+.player-bar .player-inner {
+  position: relative;
+  width: min(1180px, calc(100% - 40px));
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  min-height: var(--player-height);
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+  background: color-mix(in srgb, var(--panel-solid) 86%, transparent);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(12px);
+}
+
+/* cover */
+.player-bar .player-cover {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex: 0 0 64px;
+  border: 1px solid var(--line);
+}
+
+/* main area: meta + progress */
+.player-bar .player-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.player-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.player-kicker {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.player-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-progress-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.player-progress-row .player-time {
+  font-size: 12px;
+  color: var(--muted);
+  width: 48px;
+  flex: 0 0 48px;
+  text-align: center;
+}
+
+.player-progress {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  flex: 1 1 auto;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--line) 64%, transparent);
+}
+
+.player-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--accent-strong);
+  border: 2px solid var(--panel-solid);
+  margin-top: -4px;
+}
+
+/* controls */
+.player-bar .player-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.player-button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  background: color-mix(in srgb, var(--panel) 72%, transparent);
+  border: 1px solid var(--line);
+}
+
+.player-toggle {
+  width: 52px;
+  height: 52px;
+  font-weight: 700;
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent-strong) 14%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--accent-strong) 40%, var(--line));
+}
+
+.player-button:hover {
+  color: var(--accent-strong);
+  border-color: color-mix(in srgb, var(--accent-strong) 55%, var(--line));
+}
+
+.player-close {
+  width: 36px;
+  height: 36px;
+}
+
+/* queue overlay */
+.player-queue {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 12px;
+  width: 320px;
+  max-width: calc(100% - 48px);
+  border-radius: 10px;
+  padding: 10px;
+  background: color-mix(in srgb, var(--panel-solid) 94%, transparent);
+  border: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.28);
+  backdrop-filter: blur(12px);
+}
+
+.player-queue-list { max-height: 260px; overflow-y: auto; }
+
+/* responsive */
+@media (max-width: 720px) {
+  .player-bar { bottom: 10px; }
+  .player-bar .player-inner { padding: 8px; gap: 10px; }
+  .player-cover { width: 52px; height: 52px; }
+  .player-toggle { width: 46px; height: 46px; }
+  .player-button { width: 40px; height: 40px; }
+  .player-queue { right: 8px; width: 260px; }
+}
+
+@media (max-width: 420px) {
+  .player-bar .player-inner { width: calc(100% - 28px); }
+  .player-bar { left: 0; right: 0; }
+  .player-main { display: none; }
+  .player-queue { width: calc(100% - 28px); left: 14px; right: 14px; }
+}
