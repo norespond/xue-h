@@ -1,4 +1,4 @@
-# 雪蕐档案馆
+﻿# 雪蕐档案馆
 
 一个个人收藏与分享用的 Galgame 视听档案站，用于按游戏整理封面、简介、CG 和 BGM；站名中的“雪蕐”是游戏角色名。当前项目是单页静态应用 + JSON 数据驱动，已部署到 Cloudflare Pages。
 
@@ -167,13 +167,13 @@ assets/json/validation.json
 预览匹配/生成结果：
 
 ```powershell
-python scripts\import_song_links.py --game 020 --worker-base-url https://example.workers.dev
+python scripts\import_song_links.py --game 020 --worker-base-url https://www.xuehua-media.cc.cd
 ```
 
 写入单个游戏目录：
 
 ```powershell
-python scripts\import_song_links.py --game 020 --worker-base-url https://example.workers.dev --write
+python scripts\import_song_links.py --game 020 --worker-base-url https://www.xuehua-media.cc.cd --write
 python scripts\generate_game_json.py
 python scripts\validate_assets.py
 ```
@@ -185,7 +185,7 @@ python scripts\validate_assets.py
 ```powershell
 # 1. 新建 assets\game\{id}，写 game.json；cover 填图床封面链接，CG 可直接写 cg\cg.json
 # 2. 上传 BGM 到 R2/Worker，并把已上传的同名音频临时放入 bgm\
-python scripts\import_song_links.py --game {id} --worker-base-url https://example.workers.dev --write
+python scripts\import_song_links.py --game {id} --worker-base-url https://www.xuehua-media.cc.cd --write
 python scripts\generate_game_json.py
 python scripts\validate_assets.py
 ```
