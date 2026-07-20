@@ -1,0 +1,61 @@
+{
+  "id": "022",
+  "title": "如月金星",
+  "folder": "022",
+  "summary": "这里是载满回忆的大杂院的一角。 \n虽然早已破烂不堪，给人的感觉却依旧阳光十足，种着鲜花，装饰得可爱非常，这里就是『秋桜荘（こすもすそう）』。 \n响起的是一直生活在一起的6个青梅竹马的声音。 \n6个伙伴在一起长大，如今也是一起去上学。 \n除了主人公——新田二見（にった ふたみ）外，其余的5人都是更衣（きさらぎ）学院的特别免费生！ \n不只歌唱方面，甚至弹奏钢琴等，大家都因各自的才能而备受瞩目。 \n另一方面，二見则是毫无出众之处，只是珍惜着这维持已久的缘分，努力去照顾其他人，也就此成为了母亲一般的存在。 \n比如那位被公认为学校偶像的青梅竹马，生活能力却实在不行，没有他的话什么也做不到。 \n只要大家需要帮助，他总会全力以赴。 \n就是这样的6个人，也有着大大的梦想，那就是“幸福×6”。 \n坚信着梦想总有实现的一天，今天大家也依旧自在地骑着自行车在堤岸上前进……",
+  "description": "",
+  "cover": "https://norespond.github.io/picx-images-hosting/cover/022.8s405g05gr.jpg",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev022006.wj983b4nz.jpg"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev022005.1hswue5kxl.jpg"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev022004.8hh6cahxqk.jpg"
+    },
+    {
+      "id": "cg-004",
+      "title": "CG 004",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev022003.wj983b4kl.jpg"
+    },
+    {
+      "id": "cg-005",
+      "title": "CG 005",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev022002.67y5ssx77j.jpg"
+    },
+    {
+      "id": "cg-006",
+      "title": "CG 006",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev022001.6m4ljo5i1i.jpg"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "as always",
+      "audio": "https://www.xuehua-media.cc.cd/as%20always.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/022.8s405g05gr.jpg"
+    },
+    {
+      "id": "bgm-002",
+      "title": "Like a star",
+      "audio": "https://www.xuehua-media.cc.cd/Like%20a%20star.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/022.8s405g05gr.jpg"
+    },
+    {
+      "id": "bgm-003",
+      "title": "ぱぱらー",
+      "audio": "https://www.xuehua-media.cc.cd/%E3%81%B1%E3%81%B1%E3%82%89%E3%83%BC.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/022.8s405g05gr.jpg"
+    }
+  ]
+}

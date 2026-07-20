@@ -366,7 +366,11 @@ h2 {
   grid-column: span 2;
   border-color: color-mix(in srgb, var(--accent-strong) 38%, var(--line));
   background:
-    linear-gradient(145deg, color-mix(in srgb, var(--accent-strong) 11%, transparent), transparent 52%),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--accent-strong) 11%, transparent),
+      transparent 52%
+    ),
     var(--panel-solid);
 }
 
@@ -543,7 +547,6 @@ h2 {
     grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
     gap: 12px;
   }
-
 }
 
 @media (max-width: 520px) {
