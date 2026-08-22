@@ -1,11 +1,11 @@
 {
   "outputDir": "assets\\json",
   "totals": {
-    "games": 23,
-    "withSummary": 23,
-    "withCover": 23,
-    "withBgm": 23,
-    "withCg": 23
+    "games": 24,
+    "withSummary": 24,
+    "withCover": 24,
+    "withBgm": 24,
+    "withCg": 24
   },
   "missingSummary": [],
   "missingCover": [],
