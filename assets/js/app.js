@@ -207,7 +207,7 @@ function makeCard(game, index = 0) {
 function renderHome({ restoreScroll = false } = {}) {
   currentView = "home";
   document.body.dataset.view = "home";
-  document.title = "雪蕐档案馆";
+  document.title = "雪华的小廟";
   appBack.hidden = true;
   renderHomeShell();
   const grid = appRoot.querySelector("#game-grid");
@@ -357,7 +357,7 @@ async function renderDetail(id) {
         </section>
       `;
 
-    document.title = `${game.title} - 雪蕐档案馆`;
+    document.title = `${game.title} - 雪华的小廟`;
     appRoot.innerHTML = `
       <section class="detail-hero${gameIsUnclassified ? " is-unclassified" : ""}">
         <img class="detail-cover" src="${escapeHtml(cover)}" alt="${escapeHtml(game.title)} 封面" decoding="async" />
@@ -385,7 +385,7 @@ async function renderDetail(id) {
 
     bindDetailInteractions(cgs, tracks);
   } catch (error) {
-    document.title = "未找到作品 - 雪蕐档案馆";
+    document.title = "未找到作品 - 雪华的小廟";
     appRoot.innerHTML = `
       <section class="loading-block">
         <p>没有找到这个作品档案。</p>
