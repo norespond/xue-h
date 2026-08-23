@@ -86,6 +86,7 @@ scripts/                 # 管理与生成脚本（见下）
 - 可选：Node.js（用于 `node --check` 快速静态语法检查）。
 
 常用脚本位置：`scripts/`。常见脚本：
+
 - `generate_game_json.py`：生成首页索引（assets/json/games.json）、逐条详情（assets/json/games/{id}.json）与数据报告（assets/json/report.json）。
 - `validate_assets.py`：校验 JSON 格式、空链接、重复链接与重复曲名，输出 `assets/json/validation.json`。
 - `import_song_links.py`：根据本地 bgm/ 目录的文件名与 Worker 的基地址生成/合并 `bgm/bgm.json`（用于将本地文件名映射到已上传的云端链接）。
@@ -101,18 +102,19 @@ python scripts\generate_game_json.py
 ```
 
 运行后会更新：
+
 - `assets/json/games.json`
 - `assets/json/games/{id}.json`（按游戏生成/更新）
 - `assets/json/report.json`（简单统计与问题提示）
 
-2) 校验资源（生成后强烈建议运行）
+1) 校验资源（生成后强烈建议运行）
 
 ```powershell
 python scripts\validate_assets.py
 # 输出 assets/json/validation.json（含错误/警告）
 ```
 
-3) 导入 / 生成 BGM 云端链接（示例）
+1) 导入 / 生成 BGM 云端链接（示例）
 
 - 说明：上传音频到 Cloudflare R2（或其它对象存储）并通过 Worker 暴露为可访问链接后，把同名文件临时放到对应游戏的 `assets/game/{id}/bgm/` 目录，运行脚本以生成 `bgm/bgm.json`。
 
@@ -128,10 +130,11 @@ python scripts\validate_assets.py
 ```
 
 脚本行为要点：
+
 - 如果不传 `--worker-base-url`，脚本会尝试从已有 `bgm/bgm.json` 或历史记录推断 Worker 的基地址。
 - `--write` 会把生成结果写回到 `assets/game/{id}/bgm/bgm.json`，但脚本设计为“合并而非完全覆盖”以避免丢失手工调整过的条目。
 
-4) 简介分段（预览与批量写入）
+1) 简介分段（预览与批量写入）
 
 ```powershell
 # 仅预览单文件的自动段落拆分
@@ -150,7 +153,7 @@ python scripts\preview_summary_breaks.py --write @paths
 python scripts\generate_game_json.py
 ```
 
-5) 批量流程建议（新增或大量变动后）
+1) 批量流程建议（新增或大量变动后）
 
 ```powershell
 # 1. 更新或新增 assets/game/{id}/ 下的 game.json / cg/cg.json / bgm/bgm.json
@@ -198,9 +201,9 @@ python scripts\validate_assets.py
 node --check assets\js\app.js
 ```
 
-2. 本地预览并确认页面无明显错误；确保 favicon/manifest 已正确加载（浏览器可能缓存旧 favicon，请清缓存或使用无痕）。
+1. 本地预览并确认页面无明显错误；确保 favicon/manifest 已正确加载（浏览器可能缓存旧 favicon，请清缓存或使用无痕）。
 
-3. 提交：
+2. 提交：
 
 ```powershell
 git add -A
@@ -217,4 +220,4 @@ git push origin <branch>
 - 站点脚本会优先读取每个游戏目录下的 `game.json` 的 `cover` 字段作为封面；当封面加载失败时会使用 `assets/game/000/cover.json` 中配置的兜底链接。
 - 若需替换或新增 favicon，请把文件放到 `assets/favicon/` 并同时更新 `index.html` / `game.html` head 中的引用（当前已更新）。
 
-欢迎反馈具体希望改进的点（UI、配色、播放器交互或静态资源管理），可逐项迭代。 
+欢迎反馈具体希望改进的点（UI、配色、播放器交互或静态资源管理），可逐项迭代。
