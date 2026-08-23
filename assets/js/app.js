@@ -30,7 +30,8 @@ const viewerClose = document.querySelector("#viewer-close");
 const viewerPrev = document.querySelector("#viewer-prev");
 const viewerNext = document.querySelector("#viewer-next");
 
-const defaultFallbackCover = "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg";
+const defaultFallbackCover =
+  "https://norespond.github.io/picx-images-hosting/cover/EV074.4n82bulpg6.jpg";
 const storageKey = "xue-hua-theme";
 const libraryStateKey = "xue-hua-library-state";
 
@@ -75,7 +76,9 @@ function normalizeText(value) {
 }
 
 function isUnclassified(game) {
-  return Boolean(game?.isUnclassified || game?.id === "000" || game?.folder === "000");
+  return Boolean(
+    game?.isUnclassified || game?.id === "000" || game?.folder === "000",
+  );
 }
 
 function handleImageError(image) {
@@ -128,9 +131,17 @@ function restoreLibraryState() {
 }
 
 function sortGames(games) {
-  const byFolder = (a, b) => String(a.folder || a.id).localeCompare(String(b.folder || b.id), undefined, { numeric: true });
-  const placeUnclassifiedLast = (a, b) => Number(isUnclassified(a)) - Number(isUnclassified(b));
-  return [...games].sort((a, b) => placeUnclassifiedLast(a, b) || byFolder(a, b));
+  const byFolder = (a, b) =>
+    String(a.folder || a.id).localeCompare(
+      String(b.folder || b.id),
+      undefined,
+      { numeric: true },
+    );
+  const placeUnclassifiedLast = (a, b) =>
+    Number(isUnclassified(a)) - Number(isUnclassified(b));
+  return [...games].sort(
+    (a, b) => placeUnclassifiedLast(a, b) || byFolder(a, b),
+  );
 }
 
 function renderHomeShell() {
@@ -196,7 +207,7 @@ function makeCard(game, index = 0) {
 function renderHome({ restoreScroll = false } = {}) {
   currentView = "home";
   document.body.dataset.view = "home";
-  document.title = "雪蕐档案馆";
+  document.title = "雪华的小廟";
   appBack.hidden = true;
   renderHomeShell();
   const grid = appRoot.querySelector("#game-grid");
@@ -206,7 +217,9 @@ function renderHome({ restoreScroll = false } = {}) {
   const normalizedKeyword = normalizeText(keyword);
   const keywordFilteredGames = normalizedKeyword
     ? allGames.filter((game) => {
-        const bgmTitles = Array.isArray(game.bgmTitles) ? game.bgmTitles.join(" ") : "";
+        const bgmTitles = Array.isArray(game.bgmTitles)
+          ? game.bgmTitles.join(" ")
+          : "";
         const haystack = normalizeText(`${game.title} ${bgmTitles}`);
         return haystack.includes(normalizedKeyword);
       })
@@ -250,7 +263,12 @@ function renderCg(cgs) {
     `;
   }
 
-  const layoutClass = cgs.length === 1 ? "is-single" : cgs.length <= 3 ? "is-featured" : "is-grid";
+  const layoutClass =
+    cgs.length === 1
+      ? "is-single"
+      : cgs.length <= 3
+        ? "is-featured"
+        : "is-grid";
   return `
     <div class="cg-gallery ${layoutClass}">
       ${cgs
@@ -309,7 +327,9 @@ async function renderDetail(id) {
   `;
 
   try {
-    const response = await fetch(`assets/json/games/${encodeURIComponent(id)}.json`);
+    const response = await fetch(
+      `assets/json/games/${encodeURIComponent(id)}.json`,
+    );
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const game = await response.json();
     const cover = normalizePath(game.cover);
@@ -337,7 +357,7 @@ async function renderDetail(id) {
         </section>
       `;
 
-    document.title = `${game.title} - 雪蕐档案馆`;
+    document.title = `${game.title} - 雪华的小廟`;
     appRoot.innerHTML = `
       <section class="detail-hero${gameIsUnclassified ? " is-unclassified" : ""}">
         <img class="detail-cover" src="${escapeHtml(cover)}" alt="${escapeHtml(game.title)} 封面" decoding="async" />
@@ -365,7 +385,7 @@ async function renderDetail(id) {
 
     bindDetailInteractions(cgs, tracks);
   } catch (error) {
-    document.title = "未找到作品 - 雪蕐档案馆";
+    document.title = "未找到作品 - 雪华的小廟";
     appRoot.innerHTML = `
       <section class="loading-block">
         <p>没有找到这个作品档案。</p>
@@ -390,7 +410,9 @@ function bindSummaryToggle() {
   const button = appRoot.querySelector("#summary-toggle");
   if (!summary || !button) return;
 
-  const shouldCollapse = summary.textContent.trim().length > 260 || summary.textContent.includes("\n");
+  const shouldCollapse =
+    summary.textContent.trim().length > 260 ||
+    summary.textContent.includes("\n");
   if (!shouldCollapse) {
     button.hidden = true;
     summary.classList.remove("is-collapsed");
@@ -485,11 +507,15 @@ function formatTime(seconds) {
 
 function updatePlayerProgress() {
   const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
-  const currentTime = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+  const currentTime = Number.isFinite(audio.currentTime)
+    ? audio.currentTime
+    : 0;
   const progressPercent = duration ? (currentTime / duration) * 100 : 0;
   playerCurrent.textContent = formatTime(currentTime);
   playerDuration.textContent = formatTime(duration);
-  playerProgress.value = duration ? String((currentTime / duration) * Number(playerProgress.max)) : "0";
+  playerProgress.value = duration
+    ? String((currentTime / duration) * Number(playerProgress.max))
+    : "0";
   playerBar.style.setProperty("--player-progress", `${progressPercent}%`);
 }
 
@@ -499,8 +525,10 @@ function setPlayerStatus(message = "") {
 }
 
 function setPlayerPlaying(isPlaying) {
-  const PLAY_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
-  const PAUSE_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  const PLAY_SVG =
+    '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  const PAUSE_SVG =
+    '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
   playerToggle.innerHTML = isPlaying ? PAUSE_SVG : PLAY_SVG;
   playerToggle.setAttribute("aria-pressed", String(isPlaying));
   playerToggle.classList.toggle("is-playing", isPlaying);
@@ -527,10 +555,14 @@ function findQueuedTrackIndex(track) {
 function renderPlayerQueue() {
   playerQueue.hidden = !currentPlaylist.length || !isPlayerQueueOpen;
   playerQueueCount.textContent = `${currentPlaylist.length} 首`;
-  const queueCountSpan = playerQueueToggle.querySelector('.player-queue-count');
-  if (queueCountSpan) queueCountSpan.textContent = String(currentPlaylist.length);
+  const queueCountSpan = playerQueueToggle.querySelector(".player-queue-count");
+  if (queueCountSpan)
+    queueCountSpan.textContent = String(currentPlaylist.length);
   playerQueueToggle.setAttribute("aria-expanded", String(!playerQueue.hidden));
-  playerQueueToggle.setAttribute("aria-label", playerQueue.hidden ? "展开播放列表" : "收起播放列表");
+  playerQueueToggle.setAttribute(
+    "aria-label",
+    playerQueue.hidden ? "展开播放列表" : "收起播放列表",
+  );
 
   if (!currentPlaylist.length) {
     playerQueueList.replaceChildren();
@@ -581,7 +613,9 @@ function setActiveTrackButtonBySrc(src) {
     row.classList.remove("is-active");
   });
 
-  activeTrackButton = appRoot.querySelector(`.track-button[data-track-src="${CSS.escape(src)}"]`);
+  activeTrackButton = appRoot.querySelector(
+    `.track-button[data-track-src="${CSS.escape(src)}"]`,
+  );
   if (activeTrackButton) {
     activeTrackButton.classList.add("is-active");
     activeTrackButton.setAttribute("aria-current", "true");
@@ -793,7 +827,9 @@ function bindGlobalEvents() {
   playerCover.addEventListener("error", () => handleImageError(playerCover));
   playerProgress.addEventListener("input", () => {
     if (!audio.duration) return;
-    audio.currentTime = (Number(playerProgress.value) / Number(playerProgress.max)) * audio.duration;
+    audio.currentTime =
+      (Number(playerProgress.value) / Number(playerProgress.max)) *
+      audio.duration;
     updatePlayerProgress();
   });
   audio.addEventListener("timeupdate", () => {
@@ -853,7 +889,9 @@ async function init() {
   try {
     await loadFallbackCover();
     await loadGames();
-    const shouldRestore = !getRouteGameId() && !new URLSearchParams(window.location.search).has("q");
+    const shouldRestore =
+      !getRouteGameId() &&
+      !new URLSearchParams(window.location.search).has("q");
     if (shouldRestore) restoreLibraryState();
     renderRoute({ restoreScroll: shouldRestore });
   } catch (error) {

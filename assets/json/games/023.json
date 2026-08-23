@@ -1,0 +1,88 @@
+{
+  "id": "023",
+  "title": "恋色空模様",
+  "folder": "023",
+  "summary": "数年前从东京搬到乡下神那岛的主人公伊東誠悟，是就读于破烂木造校舍的神那学院的二年生。\n对任何事情都很快放弃，略有些无精打采，总是与两个朋友（男）无所事事地度过每一天。\n果然很无聊……\n至少有个女朋友的话是不是能够快乐点呢？\n这样试着考虑。\n思潮起伏间，的确身边有着可爱的女孩。\n有是有。\n最初想到的，是班里的美人加納 佳代子 （かのう かよこ）。\n然而她有着冷淡到被称为冰之视线的眼神，周身环绕着不要接近我的气息。\n我是没可能的。\n第二个，能让哭泣的小孩止哭的风纪委员实行部2班的班长。\n金发双马尾的篠原 聖良 （しのはら せら）。\n因为引起骚动的友人的关系曾经数次蒙她关照……\n虽然确实是个美人，不过她也很可怕呢。\n嗯，果然没可能。\n第三个，青梅竹马的服部 彩 （はっとり あや）。\n虽然感觉是最接近的，不过那满溢的活力实在是太那啥……\n而且因为太过熟悉总觉得有点尴尬。\n第四个，大众偶像，学生会长内海 静奈 （うつみ しずな）。\n岛内屈指可数的名家的千金，高岭之花，对任何人都很温柔，而且可爱的……\n这个才是真的没可能！\n第五个，妹妹、伊東 美琴（いとう みこと）。\n小时候虽然是个可爱的家伙，自从数年前再会以来，总觉得被讨厌了……\n……\n啊～嘛～没可能。\n啊～果然没女人缘～。\n结果依然是继续和两个损友过着无所事事的颓废的日子。\n在这时，誠悟他们就读的神那学院，突然发生了废校问题。\n来年起学校就要消失!\n%3F 嗯……\n嘛～无所谓。\n对学校也没有特别的留恋的誠悟，既不赞成也不反对，漠不关心。\n不管誠悟做如何想，这个问题并不只停留于校内，将整个小镇都牵扯其中，学生与成人都乱成一片。\n某时，誠悟知晓了女生们因为反对废校而处于困境的事。\n在这个时候耍耍帅留下好印象的话也许能受欢迎…\n虽然想是这么想了，但终究没有付诸行动。\n但是对校长与成人们欺人太甚的态度气愤不已的誠悟终于……\n怒吼一声。\n干劲是没有的。\n只不过是想稍微受到女生的欢迎。\n在精虫冲脑下，他雄起了。\n干掉狡猾的成人们！\n然后，最少吊个马子吧!!\n……\n动机貌似不纯。",
+  "description": "",
+  "cover": "https://norespond.github.io/picx-images-hosting/covers/023.2h90d7d9p1.webp",
+  "hero": "",
+  "cg": [
+    {
+      "id": "cg-001",
+      "title": "CG 001",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev023001.1ow4vgx1u3.webp"
+    },
+    {
+      "id": "cg-002",
+      "title": "CG 002",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev023002.lwfkl17zs.webp"
+    },
+    {
+      "id": "cg-003",
+      "title": "CG 003",
+      "image": "https://norespond.github.io/picx-images-hosting/game-cg-20/ev023003.1ziyomca1j.webp"
+    }
+  ],
+  "bgm": [
+    {
+      "id": "bgm-001",
+      "title": "Revolution!",
+      "audio": "https://www.xuehua-media.cc.cd/Revolution%21.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-002",
+      "title": "これからの未来に",
+      "audio": "https://www.xuehua-media.cc.cd/%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%E3%81%AE%E6%9C%AA%E6%9D%A5%E3%81%AB.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-003",
+      "title": "フルスロットルHeart",
+      "audio": "https://www.xuehua-media.cc.cd/%E3%83%95%E3%83%AB%E3%82%B9%E3%83%AD%E3%83%83%E3%83%88%E3%83%ABHeart.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-004",
+      "title": "二人色 ～オルゴール Ver.～",
+      "audio": "https://www.xuehua-media.cc.cd/%E4%BA%8C%E4%BA%BA%E8%89%B2%20%EF%BD%9E%E3%82%AA%E3%83%AB%E3%82%B4%E3%83%BC%E3%83%AB%20Ver.%EF%BD%9E.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-005",
+      "title": "二人色",
+      "audio": "https://www.xuehua-media.cc.cd/%E4%BA%8C%E4%BA%BA%E8%89%B2.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-006",
+      "title": "僕らの日々",
+      "audio": "https://www.xuehua-media.cc.cd/%E5%83%95%E3%82%89%E3%81%AE%E6%97%A5%E3%80%85.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-007",
+      "title": "幻影",
+      "audio": "https://www.xuehua-media.cc.cd/%E5%B9%BB%E5%BD%B1.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-008",
+      "title": "空と風の旋律",
+      "audio": "https://www.xuehua-media.cc.cd/%E7%A9%BA%E3%81%A8%E9%A2%A8%E3%81%AE%E6%97%8B%E5%BE%8B.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-009",
+      "title": "虹色",
+      "audio": "https://www.xuehua-media.cc.cd/%E8%99%B9%E8%89%B2.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    },
+    {
+      "id": "bgm-010",
+      "title": "鈍色",
+      "audio": "https://www.xuehua-media.cc.cd/%E9%88%8D%E8%89%B2.mp3",
+      "cover": "https://norespond.github.io/picx-images-hosting/cover/cover.5flagpl5n0.webp"
+    }
+  ]
+}

@@ -1,16 +1,17 @@
 :root {
   color-scheme: dark;
-  --bg: #101113;
-  --panel: rgba(23, 25, 29, 0.72);
-  --panel-solid: #1a1c20;
-  --text: #f3f0ea;
-  --muted: #b8b0a3;
-  --soft: #d9ccb8;
-  --line: rgba(255, 255, 255, 0.14);
-  --accent: #d7b56d;
-  --accent-strong: #f0d58c;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
-  --shadow-soft: 0 14px 42px rgba(0, 0, 0, 0.22);
+  /* Icy / snow-themed color palette */
+  --bg: #08111a; /* deep cold blue */
+  --panel: rgba(8, 18, 28, 0.72);
+  --panel-solid: #0b1724;
+  --text: #eaf6ff; /* pale icy text */
+  --muted: #98b3ca;
+  --soft: #cfe9ff;
+  --line: rgba(255, 255, 255, 0.10);
+  --accent: #7fcfff; /* icy cyan */
+  --accent-strong: #aee8ff;
+  --shadow: 0 24px 80px rgba(3, 8, 16, 0.48);
+  --shadow-soft: 0 14px 42px rgba(3, 8, 16, 0.32);
 }
 
 :root[data-theme="day"] {
@@ -43,9 +44,10 @@ body {
   color: var(--text);
   font-family:
     "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+  /* colder blue-tinted overlays to match snow theme */
   background:
-    linear-gradient(90deg, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.38)),
-    linear-gradient(180deg, rgba(16, 17, 19, 0.2), var(--bg) 88%),
+    linear-gradient(90deg, rgba(4, 12, 22, 0.88), rgba(4, 12, 22, 0.42)),
+    linear-gradient(180deg, rgba(8, 14, 22, 0.16), var(--bg) 88%),
     url("../themes/image/moon.png") center / cover fixed;
 }
 
@@ -72,6 +74,9 @@ body::before {
   background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 75%);
 }
+
+/* snow overlay removed per user request */
+
 
 a {
   color: inherit;
@@ -117,10 +122,18 @@ a {
 }
 
 .brand-mark {
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--accent-strong);
-  transform: rotate(45deg);
+  /* Simple snowflake-like mark built with layered gradients */
+  width: 18px;
+  height: 18px;
+  background-image:
+    linear-gradient(var(--accent-strong), var(--accent-strong)),
+    linear-gradient(90deg, var(--accent-strong), var(--accent-strong)),
+    linear-gradient(45deg, var(--accent-strong), var(--accent-strong)),
+    linear-gradient(-45deg, var(--accent-strong), var(--accent-strong));
+  background-size: 2px 100%, 100% 2px, 2px 100%, 2px 100%;
+  background-position: center, center, center, center;
+  background-repeat: no-repeat;
+  border-radius: 3px;
 }
 
 .theme-toggle:focus-visible,
@@ -188,12 +201,19 @@ p {
   margin-top: 0;
 }
 
+/* Headings use a soft rounded Japanese-style display font for an anime-friendly feel */
+h1, h2 {
+  font-family: 'Kosugi Maru', "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+}
+
 h1 {
   max-width: 780px;
   margin-bottom: 22px;
   font-size: clamp(42px, 7vw, 76px);
   line-height: 1.04;
   letter-spacing: 0;
+  color: var(--text);
+  text-shadow: 0 6px 18px rgba(3, 8, 16, 0.45);
 }
 
 h2 {
@@ -366,7 +386,11 @@ h2 {
   grid-column: span 2;
   border-color: color-mix(in srgb, var(--accent-strong) 38%, var(--line));
   background:
-    linear-gradient(145deg, color-mix(in srgb, var(--accent-strong) 11%, transparent), transparent 52%),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--accent-strong) 11%, transparent),
+      transparent 52%
+    ),
     var(--panel-solid);
 }
 
@@ -543,7 +567,6 @@ h2 {
     grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
     gap: 12px;
   }
-
 }
 
 @media (max-width: 520px) {
